@@ -5,8 +5,8 @@ import '../../../../constant/imageconstant.dart';
 import '../../../../navigation.dart';
 import 'widget/bottomtitle.dart';
 
-class ShoppingCart extends StatelessWidget {
-  const ShoppingCart({super.key});
+class CartSrceen extends StatelessWidget {
+  const CartSrceen({super.key});
 
   @override
   Widget build(BuildContext context) {

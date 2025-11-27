@@ -14,19 +14,13 @@ class NavigationController extends GetxController {
   final screens = [
     const HomeScreen(),
     const CampaignScreen(),
-    const ShoppingCart(),
+    const CartSrceen(),
     const AccountScreen(),
   ];
 
   void navigateTo(int index) {
-    if (selectedIndex.value != index) {
-      selectedIndex.value = index;
-      Get.offAll(
-        () => screens[index],
-        transition: Transition.fadeIn,
-        curve: Curves.easeIn,
-      );
-    }
+   Get.to(screens[index],transition: Transition.fadeIn);
+   selectedIndex.value=index;
   }
 }
 
@@ -38,8 +32,7 @@ class BottomNav extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(NavigationController());
 
-    return Obx(
-      () => Container(
+    return Container(
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: const BorderRadius.vertical(top: Radius.circular(20.0)),
@@ -53,13 +46,15 @@ class BottomNav extends StatelessWidget {
         ),
         child: ClipRRect(
           borderRadius: const BorderRadius.vertical(top: Radius.circular(20.0)),
-          child: NavigationBar(
+          child:Obx(
+                () =>  NavigationBar(
             height: 80,
             elevation: 0,
             selectedIndex: controller.selectedIndex.value,
             onDestinationSelected: (value) {
-              if (applyPop) Navigator.pop(context);
-              controller.navigateTo(value);
+
+
+                    controller.navigateTo(value);
             },
             backgroundColor: Colors.white,
             indicatorColor: Colors.white, // Vx.white replacement
@@ -79,8 +74,8 @@ class BottomNav extends StatelessWidget {
 
 Widget buildNavigationDestination(int index, bool isSelected) {
   final icon = _getIcon(index);
-
   return NavigationDestination(
+
     icon: isSelected
         ? Icon(icon, color: Colors.black)
         : Icon(icon, color: const Color(0xFF9E9E9E)), // Vx.gray500 replacement

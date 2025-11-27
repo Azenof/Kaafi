@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../../main.dart';
 import 'widget/searchbar.dart';
 
-AppBar homeAppBar() {
+AppBar homeAppBar(GlobalKey<ScaffoldState> homeScaffoldKey) {
   // Pass the Scaffold key
   return AppBar(
     surfaceTintColor: Colors.white,
