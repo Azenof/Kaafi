@@ -14,14 +14,15 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<ScaffoldState> _homeScaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
-      key: homeScaffoldKey,
+      key: _homeScaffoldKey,
       bottomNavigationBar: const BottomNav(),
-      appBar: homeAppBar(),
+      appBar: homeAppBar(_homeScaffoldKey),
       drawer: MyDrawer(
         userName: "Joy",
         userEmail: "TanjimJOy7@gmail.com",
-        scaffoldKey: homeScaffoldKey,
+        scaffoldKey:_homeScaffoldKey,
       ),
       body: CustomScrollView(
         clipBehavior: Clip.antiAliasWithSaveLayer,

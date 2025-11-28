@@ -24,7 +24,6 @@ class MyDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(NavigationController());
     final w = MediaQuery.of(context).size.width;
     return Drawer(
       width: w / 1.5,
@@ -62,19 +61,14 @@ class MyDrawer extends StatelessWidget {
               title: 'Home',
               icon: Icons.home_outlined,
               ontap: () {
-                if (controller.selectedIndex.value != 0) {
-                  Get.offAll(() => const HomeScreen());
-                  scaffoldKey.currentState?.closeDrawer();
-                }
+
               },
             ),
             CustomListTitle(
               title: 'Account',
               icon: Icons.person_outline,
               ontap: () {
-                controller.selectedIndex.value = 3;
-                Get.to(() => const AccountScreen());
-                scaffoldKey.currentState?.closeDrawer();
+
               },
             ),
             CustomListTitle(
@@ -89,9 +83,7 @@ class MyDrawer extends StatelessWidget {
               title: 'Cart',
               icon: Icons.shopping_cart_outlined,
               ontap: () {
-                controller.selectedIndex.value = 2;
-                Get.to(() => const ShoppingCart());
-                scaffoldKey.currentState?.closeDrawer();
+
               },
             ),
             CustomListTitle(

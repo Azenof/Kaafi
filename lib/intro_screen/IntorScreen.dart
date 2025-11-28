@@ -23,6 +23,7 @@ class IntoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final String imgpath = imagepath;
     final String ttl = title;
+    final height=MediaQuery.heightOf(context);
     return Scaffold(
       backgroundColor: Colors.white,
       floatingActionButton: (value)
@@ -45,26 +46,31 @@ class IntoScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            DotLottieLoader.fromAsset(
-              imgpath,
-              frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
-                if (dotlottie != null) {
-                  return Lottie.memory(dotlottie.animations.values.single);
-                } else {
-                  return Container();
-                }
-              },
-              errorBuilder: (ctx, ob, e) {
-                if (kDebugMode) {
-                  print(e.toString());
-                }
-                return Image.asset(Assetspaths.wrong, fit: BoxFit.fill);
-              },
-            ),
+            SizedBox(height:height*0.45,child: buildDotLottieLoader(imgpath),),
+            SizedBox(height: height*0.1,),
             Text(ttl, style: textStyle),
           ],
         ),
       ),
     );
+  }
+
+  DotLottieLoader buildDotLottieLoader(String imgpath) {
+    return DotLottieLoader.fromAsset(
+            imgpath,
+            frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
+              if (dotlottie != null) {
+                return Lottie.memory(dotlottie.animations.values.single);
+              } else {
+                return Container();
+              }
+            },
+            errorBuilder: (ctx, ob, e) {
+              if (kDebugMode) {
+                print(e.toString());
+              }
+              return Image.asset(Assetspaths.wrong, fit: BoxFit.fill);
+            },
+          );
   }
 }

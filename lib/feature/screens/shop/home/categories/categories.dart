@@ -97,7 +97,7 @@ class CategoryScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const BottomNav(applyPop: true),
+      bottomNavigationBar: const BottomNav(),
     );
   }
 }
