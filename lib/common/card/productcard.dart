@@ -1,5 +1,7 @@
+import 'package:firstapp/common/button/customelevatedbutton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../feature/screens/shop/productdetail/productdetailsscreen.dart';
 import 'widget/productavailabilty.dart';
@@ -37,11 +39,12 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final h=MediaQuery.heightOf(context);
+    final w=MediaQuery.widthOf(context);
     return GestureDetector(
       onTap: () => Get.to(() => const ProductDetails()),
       child: Container(
-        height: 80,
-        width: 100,
+        width:w*0.6,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Colors.white, // Vx.white replacement
@@ -51,13 +54,16 @@ class ProductCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             (isnetworkimg)
-                ? Image(image: NetworkImage(imgurl))
-                : Image(
-                    image: AssetImage(imgurl),
-                    height: 80,
-                    width: 80,
-                    fit: BoxFit.contain,
-                  ),
+                ? Container(height:100,width:80,child: Image(image: NetworkImage(imgurl)),)
+                :Container(
+              margin: EdgeInsets.all(6),
+              decoration:BoxDecoration(color: Colors.grey.shade400,borderRadius: BorderRadius.all(Radius.circular(12))) ,
+              height: 100,width: double.infinity,child:  Image(
+              image: AssetImage(imgurl),
+              height: 80,
+              width: 80,
+              fit: BoxFit.contain,
+            ),),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5),
               child: Column(
@@ -77,13 +83,25 @@ class ProductCard extends StatelessWidget {
                     reduced: reduced,
                   ),
                   const SizedBox(height: 2), // 2.heightBox replacement
-                  (applyrating)
-                      ? const RatingwithTotalrates(
-                          rate: 4,
-                          totalrated: "20k",
-                          itemsize: 10,
-                        )
-                      : ProductAbleabilty(amount: amount),
+                  // (applyrating)
+                  //     ? const RatingwithTotalrates(
+                  //         rate: 4,
+                  //         totalrated: "20k",
+                  //         itemsize: 10,
+                  //       )
+                  //     : ProductAbleabilty(amount: amount),
+                  Align(alignment: Alignment.centerRight,child:
+                  GestureDetector(onTap: (){},
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color:Colors.purple ,
+                        borderRadius: BorderRadius.all(
+                            Radius.circular(6))
+                    )
+                    ,child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12,vertical: 4)
+                      ,child:Text("Buy Now",style: TextStyle(color: Colors.white,fontSize: 14,fontWeight: FontWeight.bold),)
+                  ),),),),
                   const SizedBox(height: 4), // 4.heightBox replacement
                 ],
               ),

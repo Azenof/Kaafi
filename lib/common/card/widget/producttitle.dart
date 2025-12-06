@@ -17,8 +17,8 @@ class Producttitle extends StatelessWidget {
       child: Text(
         title,
         style: TextStyle(
-          fontWeight: isSemibold ? FontWeight.w500 : FontWeight.normal,
-          fontSize: 12,
+          fontWeight: isSemibold ? FontWeight.w600 : FontWeight.normal,
+          fontSize: 14,
           color: Colors.black,
         ),
         overflow: iselipsis ? TextOverflow.ellipsis : TextOverflow.visible,

@@ -9,7 +9,7 @@ class ProductSubtitle extends StatelessWidget {
     return Flexible(
       child: Text(
         title,
-        style: const TextStyle(fontSize: 12),
+        style: const TextStyle(fontSize: 14,color: Colors.grey),
         overflow: TextOverflow.ellipsis,
         maxLines: 1,
       ),
