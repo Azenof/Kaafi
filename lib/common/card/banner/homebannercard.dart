@@ -24,8 +24,8 @@ class HomeBannerCard extends StatelessWidget {
               children: [
                 HomeBannerRow(title: 'Courses', ontap: () {}),
                 const ProductCardList(autoscroll: false),
-                HomeBannerRow(title: '', ontap: () {}),
-                const ProductCardList(autoscroll: false),
+               // HomeBannerRow(title: '', ontap: () {}),
+               // const ProductCardList(autoscroll: false),
               ],
             ),
           ),

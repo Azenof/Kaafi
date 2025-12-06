@@ -88,10 +88,12 @@ class ProductCardList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final h=MediaQuery.heightOf(context);
+    final w=MediaQuery.widthOf(context);
     final controller = Get.put(ScrollControllerManager());
     controller.autoscroll.value = autoscroll;
     return SizedBox(
-      height: 180,
+      height: h*.26,
       child: ListView.separated(
         shrinkWrap: true,
         controller: controller._scrollController,
