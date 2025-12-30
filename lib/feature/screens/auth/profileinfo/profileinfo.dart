@@ -6,7 +6,7 @@ import '../../../../common/text/titletext.dart' show TitleText;
 import '../../../../common/textfield.dart/customtextfield.dart'
     show CustomTextField;
 import '../../../../constant/stringconstant.dart';
-import '../../../controller/auth/infoprovide/infoprovider.dart';
+import 'infoprovide/infoprovider.dart';
 
 class CompleteProfileScreen extends StatelessWidget {
   const CompleteProfileScreen({super.key, this.isUpdate = false});

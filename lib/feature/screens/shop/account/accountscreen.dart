@@ -1,10 +1,7 @@
-import 'package:firstapp/feature/screens/shop/account/widget/ButtonwithTitle.dart';
 import 'package:firstapp/feature/screens/shop/account/widget/FourTitleswithIcon.dart';
 import 'package:firstapp/feature/screens/shop/account/widget/FourbuttonRow.dart';
 import 'package:firstapp/feature/screens/shop/account/widget/Profilewitheditbutton.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
 import '../../../../common/text/titletext.dart';
 import '../../../../navigation.dart';
 
@@ -36,7 +33,7 @@ class AccountScreen extends StatelessWidget {
             child: Profilewitheditbutton(),
           ), // .centered() replacement
           const SizedBox(height: 20), // 20.heightBox replacement
-          const TitleText(title: "Bijoy Ahemed", size: 20),
+          const TitleText(title: "tanjim", size: 20),
           Text(
             "tanjimjoy7@gmail.com",
             style: TextStyle(

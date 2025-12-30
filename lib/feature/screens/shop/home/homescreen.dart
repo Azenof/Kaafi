@@ -1,4 +1,6 @@
+import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../common/card/banner/bannercarousel.dart' show BannerCarousel;
 import '../../../../constant/imageconstant.dart';
@@ -11,10 +13,10 @@ import 'widgets/drawer/drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> _homeScaffoldKey = GlobalKey<ScaffoldState>();
+    final controller=Get.put(HomeController());
     return Scaffold(
       key: _homeScaffoldKey,
       bottomNavigationBar: const BottomNav(),
@@ -44,14 +46,14 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ); // .paddingSymmetric() replacement
                 case 1:
-                  return const Padding(
+                  return Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: Part1(),
+                    child: Part1(list: controller.course_list,),
                   ); // .paddingSymmetric() replacement
                 case 2:
                   return const SizedBox(height: 10); // 10.heightBox replacement
                 case 3:
-                  return const Part2();
+                  return  Part2(list:controller.course_list,);
                 default:
                   return Container();
               }

@@ -13,7 +13,7 @@ class NavigationController extends GetxController {
 
   final screens = [
     const HomeScreen(),
-    const CampaignScreen(),
+    const CampaignScreen(id: '',),
     const CartSrceen(),
     const AccountScreen(),
   ];

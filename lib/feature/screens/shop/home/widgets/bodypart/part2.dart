@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../../common/card/productcardwithtag.dart';
+import '../../../../../../database_supabase/DataBase_Data_Class/courses_data_class.dart';
 import '../shopcardlisttitle.dart';
 
 class Part2 extends StatelessWidget {
-  const Part2({super.key});
-
+  const Part2({super.key, required this.list});
+  final List<Course>list;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,18 +23,20 @@ class Part2 extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ShopCardlistTitle(title: 'Top rated courses',ontap: () {}),
+            ShopCardlistTitle(title: 'Top rated courses',ontap: () {},
+              list:list,),
             ShopCardlistTitle(
               title: 'Life skills courses',
               subtitle: 'You might need',
               color: const Color(0xFFF57C00), // Vx.orange500 replacement
-              ontap: () {},
+              ontap: () {}, list:list,
             ),
             ShopCardlistTitle(
               title: 'Engineering courses',
               subtitle: 'Exclusive Deals for You',
               color: const Color(0xFF10B981), // Vx.emerald500 replacement
               ontap: () {},
+              list:list,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 10, top: 10, bottom: 10),
@@ -57,7 +60,7 @@ class Part2 extends StatelessWidget {
               ),
               itemCount: 10,
               itemBuilder: (BuildContext context, int index) {
-                return const ProductCardWithTag();
+                return const ProductCardWithTag(id: '',);
               },
             ),
           ],

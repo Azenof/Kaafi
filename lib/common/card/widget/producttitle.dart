@@ -45,7 +45,7 @@ class Shoptitle extends StatelessWidget {
         title,
         style: TextStyle(
           fontWeight: isSemibold ? FontWeight.w500 : FontWeight.normal,
-          fontSize: 12,
+          fontSize: 16,
         ),
         overflow: iselipsis ? TextOverflow.ellipsis : TextOverflow.visible,
       ),

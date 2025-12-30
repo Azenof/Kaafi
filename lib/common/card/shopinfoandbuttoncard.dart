@@ -8,10 +8,12 @@ import 'widget/ratingwithtotalrated.dart';
 import 'widget/shopinfo.dart';
 
 class ShopNameAddressPriceButtons extends StatelessWidget {
-  const ShopNameAddressPriceButtons({super.key});
+  final String instructorName;
+  const ShopNameAddressPriceButtons({super.key, required this.instructorName});
 
   @override
   Widget build(BuildContext context) {
+    final w=MediaQuery.widthOf(context);
     return Container(
       decoration: BoxDecoration(
         border: Border.all(width: 0.1),
@@ -25,30 +27,39 @@ class ShopNameAddressPriceButtons extends StatelessWidget {
           children: [
             const SizedBox(height: 10), // 10.heightBox replacement
             Row(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 const Image(
                   image: AssetImage(ImageCons.watch1),
                   height: 50,
                   width: 50,
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                Row(
+
                   children: [
-                    Text(
-                      "Instructor Name",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    const CODIcon(title: 'verified', colors: Colors.blueAccent,),
-                    const RatingwithTotalrates(rate: 4, totalrated: "200"),
-                  ],
-                ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        instructorName,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      const CODIcon(title: 'verified', colors: Colors.blueAccent,),
+                      const RatingwithTotalrates(rate: 4, totalrated: "200"),
+
+                    ],
+                  ),
+                SizedBox(width: w*.20,),
+                  const ProducPriceHorizontl(price: '200', reduced: false),
+                ],),
+
               ],
             ),
             const SizedBox(height: 20), // 20.heightBox replacement
-            const ShopInfo(),
+           // const ShopInfo(),
             const Divider(thickness: 0.5),
-            const ProducPriceHorizontl(price: '200', reduced: false),
+
             const SizedBox(height: 10), // 10.heightBox replacement
             Row(
               children: [

@@ -2,16 +2,18 @@ import 'package:firstapp/common/image/bannerimg.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constant/imageconstant.dart';
+import '../../../database_supabase/DataBase_Data_Class/courses_data_class.dart';
 import '../homepagecard.dart';
 
 class HomeBannerCard extends StatelessWidget {
-  const HomeBannerCard({super.key});
+  const HomeBannerCard({super.key, required this.list});
+  final List<Course>list;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 99, 13, 174),
+        color: const Color.fromARGB(255, 225, 198, 253),
         borderRadius: BorderRadius.circular(8), // equivalent to .rounded
       ),
       padding: const EdgeInsets.only(bottom: 10),
@@ -23,7 +25,7 @@ class HomeBannerCard extends StatelessWidget {
             child: Column(
               children: [
                 HomeBannerRow(title: 'Courses', ontap: () {}),
-                const ProductCardList(autoscroll: false),
+                ProductCardList(autoscroll: false, list: list,),
                // HomeBannerRow(title: '', ontap: () {}),
                // const ProductCardList(autoscroll: false),
               ],

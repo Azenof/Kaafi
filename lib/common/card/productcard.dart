@@ -24,8 +24,10 @@ class ProductCard extends StatelessWidget {
     this.reduced = false,
     this.isverified = true,
     this.applyrating = false,
+    required this.id,
   });
   final String title;
+  final String id;
   final String subtitle;
   final String amount;
   final String price;
@@ -42,7 +44,7 @@ class ProductCard extends StatelessWidget {
     final h=MediaQuery.heightOf(context);
     final w=MediaQuery.widthOf(context);
     return GestureDetector(
-      onTap: () => Get.to(() => const ProductDetails()),
+      onTap: () => Get.to(() => ProductDetails(id: id,)),
       child: Container(
         width:w*0.6,
         decoration: BoxDecoration(

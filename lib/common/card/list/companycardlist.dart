@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../constant/imageconstant.dart';
+import '../../../database_supabase/DataBase_Data_Class/courses_data_class.dart';
 import '../shopcard.dart';
 
 class ShopCardList extends StatelessWidget {
@@ -10,10 +11,12 @@ class ShopCardList extends StatelessWidget {
     required this.autoscroll,
     this.isSemibold = false,
     this.applyrating = false,
+    required this.list,
   });
   final bool autoscroll;
   final bool isSemibold;
   final bool applyrating;
+  final List<Course>list;
 
   @override
   Widget build(BuildContext context) {
@@ -27,14 +30,14 @@ class ShopCardList extends StatelessWidget {
         controller: controller._scrollController,
         clipBehavior: Clip.antiAliasWithSaveLayer,
         scrollDirection: Axis.horizontal,
-        cacheExtent: 10,
-        itemBuilder: (context, index) => const ShopCard(
-          isnetworkimg: false,
-          imgurl: ImageCons.logo,
-          title: "halkjajdhfasdj",
+        cacheExtent: 5,
+        itemBuilder: (context, index) => ShopCard(
+          isnetworkimg: true,
+          imgurl: list[index].thumbnail,
+          title: list[index].title,
         ),
         separatorBuilder: (_, __) => const SizedBox(width: 10),
-        itemCount: 10,
+        itemCount: list.length,
       ),
     );
   }

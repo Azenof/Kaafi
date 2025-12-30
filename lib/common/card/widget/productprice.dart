@@ -61,10 +61,11 @@ class ProducPriceHorizontl extends StatelessWidget {
   Widget build(BuildContext context) {
     return (!reduced)
         ? Text(
-            "৳ $price",
+            "Price ৳ $price",
             style: const TextStyle(
               fontWeight: FontWeight.bold,
-              color: Color(0xFFF57C00), // orange600 equivalent
+              fontSize: 16,
+              color: Color(0xFFB436D6), // orange600 equivalent
             ),
           )
         : Row(
@@ -75,7 +76,7 @@ class ProducPriceHorizontl extends StatelessWidget {
                 style: const TextStyle(
                   decoration: TextDecoration.lineThrough,
                   fontWeight: FontWeight.w500,
-                  fontSize: 12,
+                  fontSize: 24,
                   color: Color(0xFF9E9E9E), // gray500 equivalent
                 ),
               ),

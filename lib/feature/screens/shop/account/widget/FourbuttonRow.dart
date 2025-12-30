@@ -6,7 +6,6 @@ import 'orderlist/orderlist.dart';
 
 class FourButtonRow extends StatelessWidget {
   const FourButtonRow({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -14,7 +13,7 @@ class FourButtonRow extends StatelessWidget {
       children: [
         ButtonwithTitle(
           title: "Orders",
-          color: const Color(0xFF4CAF50), // Vx.green500 replacement
+          color: const Color(0xFF4CAF50),
           onpressd: () => Get.to(() => const Orderlist()),
           icon: Icons.assignment,
         ),
@@ -28,7 +27,7 @@ class FourButtonRow extends StatelessWidget {
         ),
         const SizedBox(width: 50), // 50.widthBox replacement
         ButtonwithTitle(
-          title: "Adress",
+          title: "Address",
           color: const Color(0xFFFB8C00), // Vx.orange600 replacement
           onpressd: () {},
           icon: Icons.location_pin,
