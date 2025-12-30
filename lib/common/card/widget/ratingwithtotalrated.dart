@@ -32,7 +32,7 @@ class RatingwithTotalrates extends StatelessWidget {
           '($totalrated)',
           style: const TextStyle(
             color: Color(0xFF9E9E9E), // gray500 equivalent
-            fontSize: 12, // sm equivalent
+            fontSize: 16, // sm equivalent
           ),
         ),
       ],

@@ -8,12 +8,13 @@ import 'widget/productprice.dart';
 import 'widget/ratingwithtotalrated.dart';
 
 class ProductCardWithTag extends StatelessWidget {
-  const ProductCardWithTag({super.key});
+  const ProductCardWithTag({super.key, required this.id});
+  final String id;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Get.to(() => const ProductDetails()),
+      onTap: () => Get.to(() =>  ProductDetails(id: id,)),
       child: Container(
         width: 220.0,
         height: 400.0,

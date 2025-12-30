@@ -5,11 +5,12 @@ import '../../../../../../common/card/banner/homebannercard.dart';
 import '../../../../../../common/card/homepagecard.dart' show HomePageCard;
 import '../../../../../../common/card/homepagecardlineargradiant.dart';
 import '../../../../../../constant/colorconstant.dart';
+import '../../../../../../database_supabase/DataBase_Data_Class/courses_data_class.dart';
 import '../homebuttons.dart';
 
 class Part1 extends StatelessWidget {
-  const Part1({super.key});
-
+  const Part1({super.key, required this.list});
+  final List<Course>list;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -24,12 +25,13 @@ class Part1 extends StatelessWidget {
           ),
         ),
         SizedBox(height: 20),
-        const HomeBannerCard(),
+        HomeBannerCard(list:list),
         const SizedBox(height: 10), // 10.heightBox replacement
-        const HomePageCardLinearGradiant(
+         HomePageCardLinearGradiant(
           title: 'Learn more, spend less',
           subtitle: 'save upto 70% on selected courses',
           lineracolor: [Color.fromARGB(255, 213, 195, 225), Color.fromARGB(255, 170, 235, 226)],
+           courselist:list,
         ),
         const SizedBox(height: 10), // 10.heightBox replacement
         const HomePageCard(

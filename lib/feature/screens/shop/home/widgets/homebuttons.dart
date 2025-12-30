@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../account/accountscreen.dart' show ButtonwithTitle;
+import '../../account/widget/ButtonwithTitle.dart';
 import '../../account/widget/wishlist.dart';
 
 class HomeFiveButton extends StatelessWidget {

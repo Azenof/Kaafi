@@ -9,8 +9,8 @@ import '../home/widgets/appbar/widget/searchbar.dart';
 import 'widget/customheader1.dart';
 
 class CampaignScreen extends StatelessWidget {
-  const CampaignScreen({super.key});
-
+  const CampaignScreen({super.key, required this.id});
+  final String id;
   @override
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
@@ -57,7 +57,7 @@ class CampaignScreen extends StatelessWidget {
                         ),
                     itemCount: 10,
                     itemBuilder: (BuildContext context, int index) {
-                      return const ProductCardWithTag();
+                      return  ProductCardWithTag(id: id,);
                     },
                   ),
                 ),

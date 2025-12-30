@@ -1,3 +1,4 @@
+import 'package:firstapp/Utils/validator/validator.dart';
 import 'package:flutter/material.dart';
 
 class Auth_text_field extends StatelessWidget {
@@ -5,12 +6,16 @@ class Auth_text_field extends StatelessWidget {
   final String hinttext;
   final bool obscure;
   final IconData icondata;
+  final String? Function(String?)? function;
+  final TextEditingController controller;
+
+
   const Auth_text_field({
     super.key,
     required this.hinttext,
     required this.labeltext,
     this.obscure = false,
-    required this.icondata,
+    required this.icondata, required this.controller, this.function,
   });
 
   @override
@@ -21,8 +26,10 @@ class Auth_text_field extends StatelessWidget {
         color: Colors.grey[200],
         borderRadius: BorderRadius.circular(12),
       ),
-      child: TextField(
-        obscureText: true,
+      child: TextFormField(
+        validator: function,
+        controller: controller,
+        obscureText: obscure,
         decoration: InputDecoration(
           labelText: labeltext,
           labelStyle: TextStyle(

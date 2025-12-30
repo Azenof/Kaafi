@@ -27,9 +27,9 @@ class ShopCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Get.to(() => const ShopDetails()),
+      onTap: () => Get.to(() => const ShopDetails(id: '',)),
       child: Container(
-        width: 110,
+        width: 160,
         decoration: BoxDecoration(
           color: Colors.white, // Vx.white replacement
           borderRadius: BorderRadius.circular(4), // roundedSM equivalent
@@ -48,14 +48,14 @@ class ShopCard extends StatelessWidget {
                         borderRadius: BorderRadius.circular(4),
                       ),
                       height: 100,
-                      width: 100,
+                      width: 160,
                       child: Image(image: AssetImage(imgurl)),
                     ),
               if (title != '')
                 ShoptitlewithVerification(
                   title: title,
                   isverified: isverified,
-                  isSemibold: false,
+                  isSemibold: true,
                 ),
               if (subtitle != '') ProductSubtitle(title: subtitle),
               if (subtitle != '')
@@ -64,7 +64,7 @@ class ShopCard extends StatelessWidget {
               RatingwithTotalrates(
                 rate: rate,
                 totalrated: totalrated,
-                itemsize: 12,
+                itemsize: 16,
               ),
             ],
           ),

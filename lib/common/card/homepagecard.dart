@@ -1,3 +1,5 @@
+import 'package:firstapp/database_supabase/DataBase_Data_Class/courses_data_class.dart';
+import 'package:firstapp/database_supabase/DataBase_Service/CenterDataBase/Database_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -67,7 +69,7 @@ class HomePageCard extends StatelessWidget {
           ProductCardList(
             autoscroll: autoscroll,
             isSemibold: isSemibold,
-            applyrating: applyrating,
+            applyrating: applyrating, list:DatabaseService.instance.database.value.courses,
           ),
         ],
       ),
@@ -79,19 +81,23 @@ class ProductCardList extends StatelessWidget {
   const ProductCardList({
     super.key,
     required this.autoscroll,
+
     this.isSemibold = false,
-    this.applyrating = false,
+    this.applyrating = false, required this.list,
   });
   final bool autoscroll;
   final bool isSemibold;
   final bool applyrating;
+  final List<Course>list;
 
   @override
   Widget build(BuildContext context) {
+    final h=MediaQuery.heightOf(context);
+    final w=MediaQuery.widthOf(context);
     final controller = Get.put(ScrollControllerManager());
     controller.autoscroll.value = autoscroll;
     return SizedBox(
-      height: 180,
+      height: h*.26,
       child: ListView.separated(
         shrinkWrap: true,
         controller: controller._scrollController,
@@ -101,18 +107,19 @@ class ProductCardList extends StatelessWidget {
         itemBuilder: (context, index) => ProductCard(
           applyrating: applyrating,
           isSemibold: isSemibold,
-          title: 'hello',
-          subtitle: 'bye',
-          amount: '20',
-          reduced: true,
-          newprice: '1000',
-          price: '1700',
-          imgurl: ImageCons.watch1,
-          isnetworkimg: false,
+          title: list[index].title,
+          subtitle: list[index].instructorName,
+          amount: '',
+          reduced: false,
+          newprice: list[index].price.toString(),
+          price: list[index].price.toString(),
+          imgurl: list[index].thumbnail,
+          isnetworkimg: true,
+          id:list[index].courseId,
         ),
         separatorBuilder: (_, __) =>
             const SizedBox(width: 10), // 10.widthBox replacement
-        itemCount: 10,
+        itemCount: list.length,
       ),
     );
   }

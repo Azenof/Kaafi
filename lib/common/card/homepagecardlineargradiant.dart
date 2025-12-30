@@ -1,3 +1,4 @@
+import 'package:firstapp/database_supabase/DataBase_Data_Class/courses_data_class.dart';
 import 'package:flutter/material.dart';
 
 import '../button/showbutton.dart';
@@ -9,11 +10,13 @@ class HomePageCardLinearGradiant extends StatelessWidget {
     required this.title,
     required this.subtitle,
     this.lineracolor,
+    required this.courselist,
   });
 
   final String title;
   final String subtitle;
   final List<Color>? lineracolor;
+  final List<Course>courselist;
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +63,7 @@ class HomePageCardLinearGradiant extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 10), // 10.heightBox replacement
-          const ProductCardList(autoscroll: false),
+          ProductCardList(autoscroll: false, list:courselist,),
         ],
       ),
     );

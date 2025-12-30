@@ -1,4 +1,9 @@
+import 'package:firstapp/Utils/video_module/video_module.dart';
+import 'package:firstapp/feature/screens/shop/productdetail/ShopController.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:video_player/video_player.dart';
 
 import '../../../../common/card/banner/bannercarousel.dart';
 import '../../../../common/card/productcardwithtag.dart';
@@ -12,11 +17,15 @@ import 'widgets/titleandcollection.dart';
 import 'widgets/variants.dart';
 
 class ProductDetails extends StatelessWidget {
-  const ProductDetails({super.key});
+  final String id;
+  const ProductDetails({super.key, required this.id});
 
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
+    final ProductController productController=ProductController(id: id);
+    final controller=Get.put(VideoController(url: productController.data.url));
+    print(productController.data.instructorName);
     return Scaffold(
       bottomNavigationBar: const BottomNav(),
       appBar: AppBar(
@@ -47,21 +56,16 @@ class ProductDetails extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: BannerCarousel(
-                borderRadius: 8,
-                height: height * 0.4,
-                imagePaths: const [
-                  ImageCons.banner1,
-                  ImageCons.banner1,
-                  ImageCons.banner1,
-                ],
+              child:AspectRatio(
+                aspectRatio: controller.videoPlayerController.value.aspectRatio,
+                child: VideoPlayer(controller.videoPlayerController),
               ),
             ), // .paddingSymmetric() replacement
             const SizedBox(height: 10), // 10.heightBox replacement
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
-                "Course name",
+                productController.data.title,
                 style: TextStyle(
                   fontWeight: FontWeight.w600, // semiBold equivalent
                   fontSize: 18,
@@ -97,14 +101,14 @@ class ProductDetails extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
-                "Uploaded by",
+                "Uploaded by ",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ), // .text.bold.size(16).make().paddingSymmetric() replacement
             ),
             const SizedBox(height: 8), // 8.heightBox replacement
-            const Padding(
+          Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
-              child: ShopNameAddressPriceButtons(),
+              child: ShopNameAddressPriceButtons( instructorName:productController.data.instructorName,),
             ), // .paddingSymmetric() replacement
             const SizedBox(height: 16), // 16.heightBox replacement
             Padding(
@@ -118,7 +122,7 @@ class ProductDetails extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
-                StringCons.expara,
+                productController.data.description,
               ), // .text.make().paddingSymmetric() replacement
             ),
             const SizedBox(height: 20), // 20.heightBox replacement
@@ -140,11 +144,12 @@ class ProductDetails extends StatelessWidget {
                   return const SizedBox(height: 10); // 10.heightBox replacement
                 },
                 itemBuilder: (BuildContext context, int index) {
+
                   return Row(
                     children: [
                       Expanded(
                         child: Text(
-                          "key",
+                          productController.data.status.keys.first,
                           style: TextStyle(
                             fontSize: 16,
                             color: const Color(
@@ -155,7 +160,7 @@ class ProductDetails extends StatelessWidget {
                       ),
                       Expanded(
                         child: Text(
-                          "Value",
+                          productController.data.status.keys.last,
                           style: TextStyle(fontSize: 16, color: Colors.black),
                         ), // .text.size(16).black.make() replacement
                       ),
@@ -190,7 +195,7 @@ class ProductDetails extends StatelessWidget {
                 ),
                 itemCount: 10,
                 itemBuilder: (BuildContext context, int index) {
-                  return const ProductCardWithTag();
+                  return  ProductCardWithTag(id: id,);
                 },
               ),
             ), // .box.gray100.make() replacement
