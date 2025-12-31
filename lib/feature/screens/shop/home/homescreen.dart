@@ -1,3 +1,4 @@
+import 'package:firstapp/LocalStorage/smallStorage.dart';
 import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,13 +18,16 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> _homeScaffoldKey = GlobalKey<ScaffoldState>();
     final controller=Get.put(HomeController());
+    SmallStorage smallStorage=SmallStorage.instance;
+
     return Scaffold(
       key: _homeScaffoldKey,
       bottomNavigationBar: const BottomNav(),
       appBar: homeAppBar(_homeScaffoldKey),
       drawer: MyDrawer(
-        userName: "Joy",
-        userEmail: "TanjimJOy7@gmail.com",
+        userName:controller.name.value,
+        userEmail:controller.email.value,
+
         scaffoldKey:_homeScaffoldKey,
       ),
       body: CustomScrollView(

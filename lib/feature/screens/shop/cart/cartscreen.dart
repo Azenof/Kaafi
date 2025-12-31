@@ -16,6 +16,9 @@ class CartSrceen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller=Get.put(CartController());
     final w = MediaQuery.of(context).size.width;
+    controller.sum.value=0.0;
+    controller.getCartCourseCost();
+
     return Scaffold(
       bottomNavigationBar: const BottomNav(),
       backgroundColor: Colors.white, // Vx.white replacement
@@ -73,7 +76,7 @@ class CartSrceen extends StatelessWidget {
               bottom: 0, // BorderSide.strokeAlignInside replacement
               child: SizedBox(
                 width: w,
-                child: const BottomTitle(),
+                child: BottomTitle(value:controller.sum.value ,),
               ), // .box.width(w).make() replacement
             ),
           ],

@@ -33,7 +33,8 @@ class WishListComponent extends StatelessWidget {
   const WishListComponent({
     super.key,
     required this.title,
-    required this.price, required this.url,
+    required this.price,
+    required this.url,
   });
 
   @override
@@ -41,18 +42,24 @@ class WishListComponent extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 6),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.grey[300],
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(width: 0.1),
+        border: Border.all(width: 0.2)
+        ,
       ),
       child: Row(
         children: [
-           Image(
-            image: NetworkImage(url),
-            width: 100,
-            height: 100,
-            fit: BoxFit.contain,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(6), // Rounded corners
+            child: Image.network(
+              url,
+              width: 120,
+              height: 70,
+              fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) => const Icon(Icons.broken_image),
+            ),
           ),
+          SizedBox(width: 10,),
           Expanded(
             child: SizedBox(
               width: double.infinity,
@@ -64,47 +71,16 @@ class WishListComponent extends StatelessWidget {
                   Expanded(
                     child: Text(
                       title,
-                      style: const TextStyle(fontSize: 16),
+                      style:  TextStyle(fontSize: 18,fontWeight:FontWeight.w400),
                     ),
                   ),
                   Expanded(
                     child: Text(
-                      price,
-                      style: const TextStyle(fontWeight: FontWeight.w500),
+                     "Price $price",
+                      style: const TextStyle(fontWeight: FontWeight.w700,fontSize: 16,color:Colors.red),
                     ),
                   ),
-                  Flexible(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: const [
-                            Icon(
-                              Icons.timer_sharp,
-                              size: 12,
-                              color: Color(0xFF9E9E9E),
-                            ),
-                            SizedBox(width: 4),
-                            Text(
-                              "Just now",
-                              style: TextStyle(
-                                color: Color(0xFF9E9E9E),
-                                fontSize: 8,
-                              ),
-                            ),
-                          ],
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.delete,
-                            size: 20,
-                            color: Color(0xFF757575),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+
                 ],
               ),
             ),
