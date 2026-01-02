@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../controller/campaigncontroller.dart';
 
 class CampaignTitlebox extends StatelessWidget {
-  final CustomHeaderController controller;
+  final CampaignController controller;
   final bool isSelected;
   final int index;
   final String title;

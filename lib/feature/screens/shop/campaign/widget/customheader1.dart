@@ -1,3 +1,4 @@
+import 'package:firstapp/feature/screens/shop/campaign/controller/campaigncontroller.dart' show CustomHeaderController, CampaignController;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,7 +13,7 @@ class CustomHeader1 extends StatelessWidget {
 
   CustomHeader1({super.key, required this.sort, required this.filter});
 
-  final CustomHeaderController controller = Get.put(CustomHeaderController());
+  final CampaignController controller = Get.put(CampaignController());
 
   @override
   Widget build(BuildContext context) {

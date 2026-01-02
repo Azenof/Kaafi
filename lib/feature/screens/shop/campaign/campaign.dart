@@ -1,5 +1,7 @@
 import 'package:firstapp/database_supabase/DataBase_Data_Class/courses_data_class.dart';
+import 'package:firstapp/feature/screens/shop/campaign/controller/campaigncontroller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sticky_headers/sticky_headers/widget.dart';
 
 import '../../../../common/card/banner/bannercarousel.dart' show BannerCarousel;
@@ -10,11 +12,10 @@ import '../home/widgets/appbar/widget/searchbar.dart';
 import 'widget/customheader1.dart';
 
 class CampaignScreen extends StatelessWidget {
-  const CampaignScreen({super.key, required this.id, required this.list});
-  final String id;
-  final List<Course>list;
+  const CampaignScreen({super.key});
   @override
   Widget build(BuildContext context) {
+    final controller=Get.put(CampaignController());
     final w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white, // Vx.white replacement
@@ -59,12 +60,12 @@ class CampaignScreen extends StatelessWidget {
                         ),
                     itemCount: 10,
                     itemBuilder: (BuildContext context, int index) {
-                      return  ProductCardWithTag(id: id,
-                        title: list[index].title,
-                        price: list[index].price.toString(),
-                        enrolled:list[index].enrolled.toString(),
-                        rating: list[index].rating,
-                        url: list[index].thumbnail, list: list,);
+                      return  ProductCardWithTag(id:controller.list[index].courseId,
+                        title: controller.list[index].title,
+                        price: controller.list[index].price.toString(),
+                        enrolled:controller.list[index].enrolled.toString(),
+                        rating: controller.list[index].rating,
+                        url: controller.list[index].thumbnail, list: controller.list,);
                     },
                   ),
                 ),

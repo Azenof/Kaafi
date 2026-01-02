@@ -16,7 +16,7 @@ class NavigationController extends GetxController {
   DatabaseService db=DatabaseService.instance;
   late final screens = [
     const HomeScreen(),
-     CampaignScreen(id: '', list:db.supplyData(AppString.course)as List<Course>,),
+     const CampaignScreen(),
     const CartSrceen(),
     const AccountScreen(),
   ];
