@@ -1,6 +1,7 @@
 import 'package:firstapp/feature/screens/shop/home/widgets/appbar/widget/searchbar.dart'
     show RoundedSearchBar;
 import 'package:firstapp/feature/screens/shop/productdetail/ShopController.dart';
+import 'package:firstapp/feature/screens/shop/shopdetatils/ShopdetailsController.dart';
 import 'package:flutter/material.dart';
 import 'package:sticky_headers/sticky_headers/widget.dart';
 
@@ -12,11 +13,10 @@ import 'widget/header.dart';
 import 'package:get/get.dart';
 
 class ShopDetails extends StatelessWidget {
-  const ShopDetails({super.key, required this.id, required this.list});
-  final String id;
-  final List<Course>list;
+  const ShopDetails({super.key});
   @override
   Widget build(BuildContext context) {
+    final  controller=Shopdetailscontroller();
     final w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: const Color(0xFFF5F5F5), // Vx.gray100 replacement
@@ -55,12 +55,13 @@ class ShopDetails extends StatelessWidget {
                         itemCount: 10,
                         itemBuilder: (BuildContext context, int index) {
                           return  ProductCardWithTag(
-                            id: id,
-                            title:list[index].title,
-                            price:list[index].price.toString(),
-                            enrolled: list[index].enrolled.toString(),
-                            rating:list[index].rating,
-                            url:list[index].url, list: list,);
+                            id: controller.list[index].courseId,
+                            title:controller.list[index].title,
+                            price:controller.list[index].price.toString(),
+                            enrolled: controller.list[index].enrolled.toString(),
+                            rating:controller.list[index].rating,
+                            url:controller.list[index].url,
+                            list:controller.list,);
                         },
                       ),
                     ), // .box.gray100.make() replacement

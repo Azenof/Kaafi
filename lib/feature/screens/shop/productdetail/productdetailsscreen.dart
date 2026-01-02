@@ -204,15 +204,17 @@ class ProductDetails extends StatelessWidget {
                   mainAxisSpacing: 10,
                   mainAxisExtent: 320,
                 ),
-                itemCount: 10,
+                itemCount: productController.list.length,
                 itemBuilder: (BuildContext context, int index) {
 
-                  return  ProductCardWithTag(id: id,
-                    title:list[index].title,
-                    price: list[index].price.toString(),
-                    enrolled: list[index].enrolled.toString(),
-                    rating: list[index].rating,
-                    url: list[index].thumbnail, list: list,);
+                  return  ProductCardWithTag(id:
+                  productController.list[index].courseId,
+                    title:productController.list[index].title,
+                    price: productController.list[index].price.toString(),
+                    enrolled: productController.list[index].enrolled.toString(),
+                    rating: productController.list[index].rating,
+                    url: productController.list[index].thumbnail,
+                    list: productController.list,);
                 },
               ),
             ), // .box.gray100.make() replacement

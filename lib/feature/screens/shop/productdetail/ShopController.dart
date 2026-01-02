@@ -18,6 +18,7 @@ class ProductController extends GetxController{
   late List<String>cartlist=db.database.value.users.firstWhere((v)=>v.userId==sd.box.read("id")).cartlist;
   late List<String>enrolled_list=db.database.value.users.firstWhere((v)=>v.userId==sd.box.read("id")).enrolledlist;
   late List<String>wishlist=db.database.value.users.firstWhere((v)=>v.userId==sd.box.read("id")).wishlist;
+  late final List<Course> list=db.database.value.courses;
 
   void like()async{
     wishlist.add(id);
