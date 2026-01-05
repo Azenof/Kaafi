@@ -1,4 +1,5 @@
 import 'package:firstapp/common/button/customelevatedbutton.dart';
+import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -44,8 +45,9 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final h=MediaQuery.heightOf(context);
     final w=MediaQuery.widthOf(context);
+    final homecontroller=Get.put(HomeController());
     return GestureDetector(
-      onTap: () => Get.to(() => ProductDetails(id: id, list:list,)),
+      onTap: () => Get.to(() => ProductDetails(id: id, list:list, hcontroller:homecontroller,)),
       child: Container(
         width:w*0.6,
         decoration: BoxDecoration(

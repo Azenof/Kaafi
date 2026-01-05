@@ -1,11 +1,12 @@
+import 'package:firstapp/feature/screens/shop/account/accountController.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../common/button/circulariconbutton.dart';
 import '../../../../../constant/imageconstant.dart';
 
 class Profilewitheditbutton extends StatelessWidget {
-  const Profilewitheditbutton({super.key});
-
+  const Profilewitheditbutton({super.key, required this.tap});
+  final AccountController tap;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -25,7 +26,7 @@ class Profilewitheditbutton extends StatelessWidget {
                 height: 60,
                 color: Color(0xFFBDBDBD), // Vx.gray400 replacement
                 fit: BoxFit.contain,
-                image: AssetImage(ImageCons.person),
+                image: NetworkImage(''),
               ),
             ),
           ),
@@ -51,7 +52,9 @@ class Profilewitheditbutton extends StatelessWidget {
               minimumSize: const Size(30, 30),
               backgroundColor: Colors.white,
               iconColor: Colors.black,
-              onPressed: () {},
+              onPressed: ()async{
+                await tap.uploadImage(context);
+              },
             ),
           ),
         ),

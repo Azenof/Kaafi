@@ -1,5 +1,6 @@
 import 'package:firstapp/common/image/productimgwithtag.dart';
 import 'package:firstapp/database_supabase/DataBase_Data_Class/courses_data_class.dart';
+import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,7 +16,7 @@ class ProductCardWithTag extends StatelessWidget {
     required this.price,
     required this.enrolled,
     required this.rating,
-    required this.url, required this.list});
+    required this.url, required this.controller, required this.list});
   final String id;
   final String title;
   final String price;
@@ -23,10 +24,11 @@ class ProductCardWithTag extends StatelessWidget {
   final double rating;
   final String url;
   final List<Course>list;
+  final HomeController controller;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: ()=> Get.to(()=>ProductDetails(id: id, list: list,)),
+      onTap: ()=> Get.to(()=>ProductDetails(id: id, list: list, hcontroller: controller),fullscreenDialog: true),
       child: Container(
         width: 220.0,
         height: 400.0,

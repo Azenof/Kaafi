@@ -1,5 +1,6 @@
 import 'package:firstapp/database_supabase/DataBase_Data_Class/courses_data_class.dart';
 import 'package:firstapp/feature/screens/shop/campaign/controller/campaigncontroller.dart';
+import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sticky_headers/sticky_headers/widget.dart';
@@ -16,6 +17,7 @@ class CampaignScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller=Get.put(CampaignController());
+    final homeController=Get.put(HomeController());
     final w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white, // Vx.white replacement
@@ -65,7 +67,7 @@ class CampaignScreen extends StatelessWidget {
                         price: controller.list[index].price.toString(),
                         enrolled:controller.list[index].enrolled.toString(),
                         rating: controller.list[index].rating,
-                        url: controller.list[index].thumbnail, list: controller.list,);
+                        url: controller.list[index].thumbnail, list: controller.list, controller:homeController,);
                     },
                   ),
                 ),

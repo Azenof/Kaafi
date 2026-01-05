@@ -9,7 +9,7 @@ class HomeController extends GetxController {
   final DatabaseService db = DatabaseService.instance;
   late final List<Course> list;
   Rx<String> name=''.obs;
-   Rx<String> email=''.obs;
+  Rx<String> email=''.obs;
 
   @override
   void onInit() {

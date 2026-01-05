@@ -34,14 +34,17 @@ class Fourtitleswithicon extends StatelessWidget {
         title: "Enrolled Courses",
         icon: Icons.school,
         color: const Color(0xFF4CAF50).withValues(alpha: 0.85),
-        onTap: () =>Get.to(()=>Wishlist(controller: controller, list: controller.enrolledlist,)),
+        onTap: () =>Get.to(()=>Wishlist(controller: controller,
+          title: "Enrolled Courses",
+          list: controller.enrolledlist,)),
       ),
       AccountMenuItem(
         title: "Wishlist",
         icon: Icons.favorite_border_outlined,
         color: const Color(0xFFF44336),
         onTap: () {
-          Get.to(() => Wishlist(controller: controller, list: controller.wishlist,));
+          Get.to(() => Wishlist(controller: controller,
+            list: controller.wishlist,));
         },
       ),
       AccountMenuItem(

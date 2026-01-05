@@ -1,14 +1,17 @@
+import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../../../common/card/productcardwithtag.dart';
 import '../../../../../../database_supabase/DataBase_Data_Class/courses_data_class.dart';
 import '../shopcardlisttitle.dart';
 
 class Part2 extends StatelessWidget {
-  const Part2({super.key, required this.list});
-  final List<Course>list;
+  const Part2({super.key});
+
   @override
   Widget build(BuildContext context) {
+    final controller=Get.put(HomeController());
     return Container(
       decoration: BoxDecoration(
         color: const Color(0xFFF5F5F5), // gray100 equivalent
@@ -23,20 +26,19 @@ class Part2 extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ShopCardlistTitle(title: 'Top rated courses',ontap: () {},
-              list:list,),
+            ShopCardlistTitle(title: 'Top rated courses',ontap: () {}, controller:controller,),
             ShopCardlistTitle(
               title: 'Life skills courses',
               subtitle: 'You might need',
               color: const Color(0xFFF57C00), // Vx.orange500 replacement
-              ontap: () {}, list:list,
+              ontap: () {}, controller:controller,
             ),
             ShopCardlistTitle(
               title: 'Engineering courses',
               subtitle: 'Exclusive Deals for You',
               color: const Color(0xFF10B981), // Vx.emerald500 replacement
               ontap: () {},
-              list:list,
+              controller:controller,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 10, top: 10, bottom: 10),
@@ -60,12 +62,13 @@ class Part2 extends StatelessWidget {
               ),
               itemCount: 10,
               itemBuilder: (BuildContext context, int index) {
-                return  ProductCardWithTag(id: '',
-                  title: list[index].title,
-                  price: list[index].price.toString(),
-                  enrolled: list[index].enrolled.toString(),
-                  rating: list[index].rating,
-                  url: list[index].thumbnail, list: list,);
+                return  ProductCardWithTag(id: controller.list[index].courseId,
+                  title: controller.list[index].title,
+                  price: controller.list[index].price.toString(),
+                  enrolled: controller.list[index].enrolled.toString(),
+                  rating: controller.list[index].rating,
+                  url: controller.list[index].thumbnail, controller:controller,
+                  list: controller.list,);
               },
             ),
           ],

@@ -29,8 +29,9 @@ class ProductController extends GetxController{
         await supabase.client.from(AppString.user.capitalize!).update({'cart':cartlist}).eq('userId', sd.box.read("id"));
   }
   void enroll()async{
-    cartlist.add(id);
-    await supabase.client.from(AppString.user.capitalize!).update({'enrolled_courses':cartlist}).eq('userId', sd.box.read("id"));
+    print("Hello");
+    enrolled_list.add(id);
+    await supabase.client.from(AppString.user.capitalize!).update({'enrolled_courses':enrolled_list}).eq('userId', sd.box.read("id"));
   }
 }
 

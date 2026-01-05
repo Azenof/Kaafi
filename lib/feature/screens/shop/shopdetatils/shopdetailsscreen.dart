@@ -1,3 +1,4 @@
+import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
 import 'package:firstapp/feature/screens/shop/home/widgets/appbar/widget/searchbar.dart'
     show RoundedSearchBar;
 import 'package:firstapp/feature/screens/shop/productdetail/ShopController.dart';
@@ -17,6 +18,7 @@ class ShopDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final  controller=Shopdetailscontroller();
+    final homeController=HomeController();
     final w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: const Color(0xFFF5F5F5), // Vx.gray100 replacement
@@ -61,7 +63,7 @@ class ShopDetails extends StatelessWidget {
                             enrolled: controller.list[index].enrolled.toString(),
                             rating:controller.list[index].rating,
                             url:controller.list[index].url,
-                            list:controller.list,);
+                            list:controller.list, controller: homeController,);
                         },
                       ),
                     ), // .box.gray100.make() replacement

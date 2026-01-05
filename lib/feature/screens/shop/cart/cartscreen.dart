@@ -14,17 +14,17 @@ class CartSrceen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller=Get.put(CartController());
+    final controller = Get.put(CartController());
     final w = MediaQuery.of(context).size.width;
-    controller.sum.value=0.0;
+    controller.sum.value = 0.0;
     controller.getCartCourseCost();
 
     return Scaffold(
       bottomNavigationBar: const BottomNav(),
-      backgroundColor: Colors.white, // Vx.white replacement
+      backgroundColor: Colors.white,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.white, // Vx.white replacement
+        backgroundColor: Colors.white,
         title: const TitleText(title: 'Shopping Cart', size: 22),
         actions: [
           IconButton(
@@ -38,50 +38,66 @@ class CartSrceen extends StatelessWidget {
         child: Stack(
           children: [
             (controller.cartlist.isNotEmpty)
-                ? Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: ListView.separated(
+                ? SingleChildScrollView(
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    ListView.separated(
                       itemCount: controller.cartlist.length,
-                      separatorBuilder: (BuildContext context, int index) {
-                        return const SizedBox(
-                          height: 10,
-                        ); // 10.heightBox replacement
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      separatorBuilder:
+                          (BuildContext context, int index) {
+                        return const SizedBox(height: 10);
                       },
                       itemBuilder: (BuildContext context, int index) {
-                        Course c=controller.getCartCourses(controller.cartlist[index]);
-                        return WishListComponent(title:c.title
-                            ,price:c.price.toString(), url:c.thumbnail,);// .text.make().box.red100.make() replacement
+                        Course c = controller.getCartCourses(
+                            controller.cartlist[index]);
+                        return WishListComponent(
+                          title: c.title,
+                          price: c.price.toString(),
+                          url: c.thumbnail,
+                        );
                       },
                     ),
-                  ) // .box.padding().make() replacement
-                : Column(
-                    children: [
-                      Center(
-                        child: const Image(
-                          image: AssetImage(ImageCons.cart),
-                          width: 400,
-                        ),
-                      ), // .centered() replacement
-                      Text(
-                        'Nothing to add to Cart',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600, // semiBold equivalent
-                          color: const Color(0xFF9E9E9E), // gray500 equivalent
-                          fontSize: 16,
-                        ),
-                      ), // .text.semiBold.gray500.size(16).make() replacement
-                    ],
+                    const SizedBox(height: 80), // spacing above bottom bar
+                  ],
+                ),
+              ),
+            )
+                : SingleChildScrollView(
+              child: Column(
+                children: [
+                  Center(
+                    child: const Image(
+                      image: AssetImage(ImageCons.cart),
+                      width: 300, // responsive size
+                    ),
                   ),
+                  const SizedBox(height: 20),
+                  Text(
+                    'Nothing to add to Cart',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFF9E9E9E),
+                      fontSize: 16,
+                    ),
+                  ),
+                  const SizedBox(height: 80), // spacing above bottom bar
+                ],
+              ),
+            ),
             Positioned(
-              bottom: 0, // BorderSide.strokeAlignInside replacement
+              bottom: 0,
               child: SizedBox(
                 width: w,
-                child: BottomTitle(value:controller.sum.value ,),
-              ), // .box.width(w).make() replacement
+                child: BottomTitle(value: controller.sum.value),
+              ),
             ),
           ],
         ),
-      ), // .box.width(w).make() replacement
+      ),
     );
   }
 }

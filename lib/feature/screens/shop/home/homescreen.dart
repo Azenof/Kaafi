@@ -59,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                 case 2:
                   return const SizedBox(height: 10); // 10.heightBox replacement
                 case 3:
-                  return  Part2(list:controller.list,);
+                  return  Part2();
                 default:
                   return Container();
               }

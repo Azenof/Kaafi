@@ -1,5 +1,6 @@
 import 'package:firstapp/Utils/video_module/video_module.dart';
 import 'package:firstapp/ai_integrate.dart';
+import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
 import 'package:firstapp/feature/screens/shop/productdetail/ShopController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,7 +19,8 @@ import 'widgets/variants.dart';
 
 class ProductDetails extends StatelessWidget {
   final String id;
-  const ProductDetails({super.key, required this.id, required this.list});
+  const ProductDetails({super.key, required this.id, required this.hcontroller, required this.list});
+  final HomeController hcontroller;
   final List<Course>list;
   @override
   Widget build(BuildContext context) {
@@ -125,7 +127,8 @@ class ProductDetails extends StatelessWidget {
               child: ShopNameAddressPriceButtons(
                 instructorName:productController.data.instructorName,
                 onPressed:()=>productController.addToCart(),
-                enroll: ()=>productController.enroll(), rate: productController.data.rating,),
+                enroll: ()=>productController.enroll(),
+                rate: productController.data.rating,),
             ), // .paddingSymmetric() replacement
             const SizedBox(height: 16), // 16.heightBox replacement
             Padding(
@@ -214,6 +217,7 @@ class ProductDetails extends StatelessWidget {
                     enrolled: productController.list[index].enrolled.toString(),
                     rating: productController.list[index].rating,
                     url: productController.list[index].thumbnail,
+                    controller: hcontroller,
                     list: productController.list,);
                 },
               ),

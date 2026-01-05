@@ -69,7 +69,8 @@ class ShopNameAddressPriceButtons extends StatelessWidget {
                   child: SizedBox(
                     height: 40,
                     child: CustomElevatedButton(
-                      title: "Add to WishList",
+                      applyborder: true,
+                      title: "Add to cart",
                       textcolor: Colors.black, // Vx.black replacement
                       onPressed: onPressed,
                       backgroundColor: const Color(
@@ -83,9 +84,10 @@ class ShopNameAddressPriceButtons extends StatelessWidget {
                   child: SizedBox(
                     height: 40,
                     child: CustomElevatedButton(
+                      applyborder: true,
                       backgroundColor: Colors.purple,
                       title: "Enroll",
-                      onPressed: ()=>enroll,
+                      onPressed: enroll,
                     ),
                   ),
                 ),
