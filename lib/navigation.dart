@@ -8,7 +8,7 @@ import 'package:iconsax/iconsax.dart';
 class NavigationController extends GetxController {
   static NavigationController get instance => Get.find();
   final Rx<int> selectedIndex = 0.obs;
-  DatabaseService db=DatabaseService.instance;
+
   late final screens = [
     const HomeScreen(),
      const CampaignScreen(),

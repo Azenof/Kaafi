@@ -8,10 +8,11 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName:".env");
   final supabaseUrl = dotenv.env['SUPABASE_URL']!;
   final supabaseAnonKey = dotenv.env['SUPABASE_ANON_KEY']!;
   final mistralKey = dotenv.env['MISTRAL_API_KEY']!;
-  await SmallStorage.instance.initialize();
+  Get.put(SmallStorage());
   await Supabase.initialize(url:supabaseUrl, anonKey:supabaseAnonKey);
   await DatabaseService.instance.initialize();
   await SmallStorage.instance.initialize();
@@ -19,29 +20,9 @@ Future<void> main() async {
   MistralService().init(mistralKey);
   runApp(
     GetMaterialApp(
-      initialRoute: AppRoutes.home,
+      initialRoute:AppRoutes.pageloader,
       getPages: AppRoutes.routes,
       initialBinding: GlobalBinding(),
     ),
   );
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: (UserSession().login== null)
-          ? PagesLoader(
-              dotlottieAssets: Assetspaths.assetspaths,
-              titles: AppStrings.titles,
-              textStyle: GoogleFonts.openSans(
-                textStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-              ),
-            )
-          : HomeScreen(),
-    );
-  }
 }

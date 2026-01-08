@@ -50,9 +50,10 @@ class GlobalBinding extends Bindings {
       ),
       permanent: true
     );
-    Get.put(CartController(centralDatabaseController: Get.put(Get.find<CentralDatabaseController>()),
-        data: Get.put(Get.find<EssentialData>(),
-        permanent: true)));
+    Get.put(CartController(
+        centralDatabaseController: Get.find<CentralDatabaseController>(),
+        data: Get.find<EssentialData>()),
+        permanent: true);
   }
   }
 

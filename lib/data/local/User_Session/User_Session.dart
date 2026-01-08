@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 
 class UserSession{
   SmallStorage sm=SmallStorage();
-  String get userID=>sm.box.read("id");
-  String get userEmail=>sm.box.read("email");
+  String get userID=>sm.box.read("id")??"Name";
+  String get userEmail=>sm.box.read("email")??"Email";
   String get userName=>sm.box.read("name")??"Hello";
-  String? get login=>sm.box.read("login");
+  bool get login=>sm.box.read("login");
 }

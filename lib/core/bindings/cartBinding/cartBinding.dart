@@ -6,12 +6,10 @@ import '../../../data/local/EssentialData/EssentialData.dart';
 import '../../../feature/screens/shop/cart/cartController.dart';
 import '../../Services/DataBaseService/CenterDataBase/Controller/center_data_base_controller.dart';
 
-class CartBinding extends Bindings{
+class CartBinding extends Bindings {
   @override
   void dependencies() {
-    // TODO: implement dependencies
     Get.put(CartController(centralDatabaseController: Get.put(Get.find<CentralDatabaseController>()),
         data: Get.put(Get.find<EssentialData>(),)));
   }
-  }
-
+}
