@@ -9,4 +9,5 @@ class UserSession{
   String get userID=>sm.box.read("id");
   String get userEmail=>sm.box.read("email");
   String get userName=>sm.box.read("name")??"Hello";
+  String? get login=>sm.box.read("login");
 }

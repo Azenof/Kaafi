@@ -1,48 +1,47 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '/Utils/exports/data_paths.dart';
 
-
-
-
-
-Future<void> main()async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  debugPaintSizeEnabled = false;
-  await Supabase.initialize(url:"https://uyijmaytdgepuufiboef.supabase.co" ,
-      anonKey:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV5aWptYXl0ZGdlcHV1Zmlib2VmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ1OTA2NTgsImV4cCI6MjA4MDE2NjY1OH0.aXyema8ZpqDadeyz9St3sHp1Svy4otDwCa0bEQOnF9M");
-  await DatabaseService.instance.initialize();
-  MistralService().init("xNmaPhD20bdAoxUSOMD4agcjLFerZHJC");
-  GetStorage.init();
-  Get.put(SmallStorage());
+  final supabaseUrl = dotenv.env['SUPABASE_URL']!;
+  final supabaseAnonKey = dotenv.env['SUPABASE_ANON_KEY']!;
+  final mistralKey = dotenv.env['MISTRAL_API_KEY']!;
   await SmallStorage.instance.initialize();
-  runApp(GetMaterialApp(
-    initialRoute: AppRoutes.home,
-    getPages: AppRoutes.routes,
-    initialBinding: GlobalBinding(),
-  ));}
-
+  await Supabase.initialize(url:supabaseUrl, anonKey:supabaseAnonKey);
+  await DatabaseService.instance.initialize();
+  await SmallStorage.instance.initialize();
+  await GetStorage.init();
+  MistralService().init(mistralKey);
+  runApp(
+    GetMaterialApp(
+      initialRoute: AppRoutes.home,
+      getPages: AppRoutes.routes,
+      initialBinding: GlobalBinding(),
+    ),
+  );
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    SmallStorage instance=SmallStorage.instance;
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home:(instance.box.read("login")==null)?PagesLoader(
-          dotlottieAssets: Assetspaths.assetspaths,
-          titles: AppStrings.titles,
-          textStyle: GoogleFonts.openSans(
-              textStyle:TextStyle(fontWeight: FontWeight.bold,fontSize: 24)
-          )
-      ):HomeScreen(),
+      home: (UserSession().login== null)
+          ? PagesLoader(
+              dotlottieAssets: Assetspaths.assetspaths,
+              titles: AppStrings.titles,
+              textStyle: GoogleFonts.openSans(
+                textStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+              ),
+            )
+          : HomeScreen(),
     );
   }
 }
-
