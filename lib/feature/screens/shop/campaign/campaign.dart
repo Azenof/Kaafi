@@ -1,7 +1,8 @@
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sticky_headers/sticky_headers/widget.dart';
-import '/Utils/exports/data_paths.dart';
 
 
 class CampaignScreen extends StatelessWidget {

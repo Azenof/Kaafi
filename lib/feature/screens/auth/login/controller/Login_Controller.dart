@@ -1,7 +1,12 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import '/Utils/exports/data_paths.dart' hide User;
+
+import '../../../../../core/utils/validator/validator.dart';
+import '../../../../../data/local/LocalStorage/smallStorage.dart';
+import '../../../shop/home/homescreen.dart';
+import '../../Auth_implements/Auth_implement.dart';
 
 
 

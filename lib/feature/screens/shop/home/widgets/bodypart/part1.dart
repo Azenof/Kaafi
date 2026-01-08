@@ -1,14 +1,9 @@
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '/Utils/exports/data_paths.dart';
 
-import '/Utils/exports/data_paths.dart';
-import '/Utils/exports/data_paths.dart';
-import '/Utils/exports/data_paths.dart';
-import '/Utils/exports/data_paths.dart';
-import '/Utils/exports/data_paths.dart';
-import '/Utils/exports/data_paths.dart';
 
 
 class Part1 extends StatelessWidget {

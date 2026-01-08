@@ -1,11 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '/Utils/exports/data_paths.dart';
+import '/exports/data_paths.dart';
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '/Utils/exports/data_paths.dart';
 
 class FaqHelp extends StatelessWidget {
   const FaqHelp({super.key});
