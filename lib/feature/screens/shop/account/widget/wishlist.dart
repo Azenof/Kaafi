@@ -1,6 +1,7 @@
-import 'package:firstapp/database_supabase/DataBase_Data_Class/courses_data_class.dart';
 import 'package:firstapp/feature/screens/shop/account/accountController.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../DataClass/courses_data_class.dart';
 
 class Wishlist extends StatelessWidget {
   const Wishlist({
@@ -47,7 +48,7 @@ class Wishlist extends StatelessWidget {
         child: ListView.builder(
           itemCount: list.length,
           itemBuilder: (context, index) {
-            Course course = controller.getCartCourses(list[index]);
+            Course course = controller.data.getCartCourses(list[index]);
             return Dismissible(
               key: ValueKey(course.title),
               direction: DismissDirection.endToStart,

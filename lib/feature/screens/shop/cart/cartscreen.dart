@@ -2,10 +2,9 @@ import 'package:firstapp/feature/screens/shop/account/widget/wishlist.dart';
 import 'package:firstapp/feature/screens/shop/cart/cartController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import '../../../../DataClass/courses_data_class.dart';
 import '../../../../common/text/titletext.dart';
 import '../../../../constant/imageconstant.dart';
-import '../../../../database_supabase/DataBase_Data_Class/courses_data_class.dart';
 import '../../../../navigation.dart';
 import 'widget/bottomtitle.dart';
 
@@ -14,7 +13,7 @@ class CartSrceen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(CartController());
+    final controller = Get.find<CartController>();
     final w = MediaQuery.of(context).size.width;
     controller.sum.value = 0.0;
     controller.getCartCourseCost();
@@ -37,14 +36,14 @@ class CartSrceen extends StatelessWidget {
         width: w,
         child: Stack(
           children: [
-            (controller.cartlist.isNotEmpty)
+            (controller.data.cartList.isNotEmpty)
                 ? SingleChildScrollView(
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   children: [
                     ListView.separated(
-                      itemCount: controller.cartlist.length,
+                      itemCount: controller.data.cartList.length,
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       separatorBuilder:
@@ -52,8 +51,8 @@ class CartSrceen extends StatelessWidget {
                         return const SizedBox(height: 10);
                       },
                       itemBuilder: (BuildContext context, int index) {
-                        Course c = controller.getCartCourses(
-                            controller.cartlist[index]);
+                        Course c = controller.data.getCartCourses(
+                            controller.data.cartList[index]);
                         return WishListComponent(
                           title: c.title,
                           price: c.price.toString(),

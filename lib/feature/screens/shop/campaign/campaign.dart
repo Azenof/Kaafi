@@ -1,10 +1,8 @@
-import 'package:firstapp/database_supabase/DataBase_Data_Class/courses_data_class.dart';
 import 'package:firstapp/feature/screens/shop/campaign/controller/campaigncontroller.dart';
 import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sticky_headers/sticky_headers/widget.dart';
-
 import '../../../../common/card/banner/bannercarousel.dart' show BannerCarousel;
 import '../../../../common/card/productcardwithtag.dart';
 import '../../../../constant/imageconstant.dart';
@@ -16,8 +14,8 @@ class CampaignScreen extends StatelessWidget {
   const CampaignScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    final controller=Get.put(CampaignController());
-    final homeController=Get.put(HomeController());
+    final controller=Get.find<CampaignController>();
+    final homeController=Get.find<HomeController>();
     final w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white, // Vx.white replacement
@@ -62,12 +60,15 @@ class CampaignScreen extends StatelessWidget {
                         ),
                     itemCount: 10,
                     itemBuilder: (BuildContext context, int index) {
-                      return  ProductCardWithTag(id:controller.list[index].courseId,
-                        title: controller.list[index].title,
-                        price: controller.list[index].price.toString(),
-                        enrolled:controller.list[index].enrolled.toString(),
-                        rating: controller.list[index].rating,
-                        url: controller.list[index].thumbnail, list: controller.list, controller:homeController,);
+                      return  ProductCardWithTag(
+                        id:controller.data.list[index].courseId,
+                        title: controller.data.list[index].title,
+                        price: controller.data.list[index].price.toString(),
+                        enrolled:controller.data.list[index].enrolled.toString(),
+                        rating: controller.data.list[index].rating,
+                        url: controller.data.list[index].thumbnail,
+                        list: controller.data.list,
+                        controller:homeController,);
                     },
                   ),
                 ),

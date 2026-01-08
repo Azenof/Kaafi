@@ -12,8 +12,7 @@ class CustomHeader1 extends StatelessWidget {
   final VoidCallback filter;
 
   CustomHeader1({super.key, required this.sort, required this.filter});
-
-  final CampaignController controller = Get.put(CampaignController());
+  final CampaignController controller = Get.find<CampaignController>();
 
   @override
   Widget build(BuildContext context) {

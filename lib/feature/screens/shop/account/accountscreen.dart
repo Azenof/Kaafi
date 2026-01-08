@@ -2,6 +2,7 @@ import 'package:firstapp/feature/screens/shop/account/accountController.dart';
 import 'package:firstapp/feature/screens/shop/account/widget/FourTitleswithIcon.dart';
 import 'package:firstapp/feature/screens/shop/account/widget/FourbuttonRow.dart';
 import 'package:firstapp/feature/screens/shop/account/widget/Profilewitheditbutton.dart';
+import 'package:firstapp/feature/screens/shop/account/widget/Profilewitheditbutton.dart' as Profilewitheditbutton;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../common/text/titletext.dart';
@@ -14,7 +15,8 @@ class AccountScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   final AccountController controller =Get.put(AccountController());
+   final AccountController controller =Get.find<AccountController>();
+
     return Scaffold(
       bottomNavigationBar: const BottomNav(),
       appBar: AppBar(
@@ -33,12 +35,12 @@ class AccountScreen extends StatelessWidget {
       body: Column(
         children: [
            Center(
-            child: Profilewitheditbutton(tap:controller,),
+            child:ProfileWithEditButton(onpressd:()=>controller.service.uploadImage(context),),
           ), // .centered() replacement
           const SizedBox(height: 20), // 20.heightBox replacement
-          TitleText(title: controller.user!.name, size: 20),
+          TitleText(title: controller.data.userName, size: 20),
           Text(
-            controller.user!.email,
+            controller.data.email,
             style: TextStyle(
               color: const Color(0xFF9E9E9E), // gray500 equivalent
             ),

@@ -27,7 +27,8 @@ class HomeFiveButton extends StatelessWidget {
           ButtonwithTitle(
             title: 'Wish List',
             color: const Color(0xFFE53935), // Vx.red600 replacement
-            onpressd: () => Get.to(() => Wishlist(controller: controller, list: controller.wishlist,)),
+            onpressd: () => Get.to(() => Wishlist(controller: controller,
+              list: controller.data.wishlist,)),
             icon: Icons.favorite_border_rounded,
           ),
           /*ButtonwithTitle(

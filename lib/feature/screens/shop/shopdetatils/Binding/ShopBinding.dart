@@ -1,0 +1,16 @@
+import 'package:firstapp/DataBase/EssentialData/EssentialData.dart';
+import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
+import 'package:firstapp/feature/screens/shop/shopdetatils/ShopdetailsController.dart';
+import 'package:get/get.dart';
+
+import '../../../../../Service/DataBaseService/CenterDataBase/Controller/center_data_base_controller.dart';
+
+class ShopBinding extends Bindings{
+  @override
+  void dependencies() {
+    // TODO: implement dependencies
+    Get.put(HomeController(controller: Get.put(Get.find<CentralDatabaseController>()),
+        data: Get.put(Get.find<EssentialData>(),)));
+    Get.put(ShopDetailsController(Get.put(Get.find<CentralDatabaseController>()),Get.put(Get.find<EssentialData>())));
+  }
+}

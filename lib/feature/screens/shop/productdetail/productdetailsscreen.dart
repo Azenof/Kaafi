@@ -1,17 +1,17 @@
 import 'package:firstapp/Utils/video_module/video_module.dart';
 import 'package:firstapp/ai_integrate.dart';
 import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
-import 'package:firstapp/feature/screens/shop/productdetail/ShopController.dart';
+import 'package:firstapp/feature/screens/shop/productdetail/ProductController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:video_player/video_player.dart';
 
+import '../../../../DataClass/courses_data_class.dart';
 import '../../../../common/card/productcardwithtag.dart';
 import '../../../../common/card/shopinfoandbuttoncard.dart'
     show ShopNameAddressPriceButtons;
-import '../../../../database_supabase/DataBase_Data_Class/courses_data_class.dart';
 import '../../../../navigation.dart';
 import '../home/widgets/appbar/widget/searchbar.dart';
 import 'widgets/titleandcollection.dart';
@@ -19,14 +19,15 @@ import 'widgets/variants.dart';
 
 class ProductDetails extends StatelessWidget {
   final String id;
-  const ProductDetails({super.key, required this.id, required this.hcontroller, required this.list});
-  final HomeController hcontroller;
-  final List<Course>list;
+  const ProductDetails({super.key,
+    required this.id,});
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-    final ProductController productController=ProductController(id: id);
-    final controller=Get.put(VideoController(url: productController.data.url));
+    final ProductController productController=Get.find<ProductController>();
+    final HomeController controller =Get.find<HomeController>();
+    final videocontroller=Get.put(VideoController(url:productController.data.course.url));
 
     return Scaffold(
       bottomNavigationBar: const BottomNav(),
@@ -58,15 +59,15 @@ class ProductDetails extends StatelessWidget {
               alignment: Alignment.center,
               children: [
                 AspectRatio(
-                  aspectRatio: controller
+                  aspectRatio: videocontroller
                       .videoPlayerController.value.aspectRatio,
-                  child: VideoPlayer(controller.videoPlayerController),
-                ),                Obx(() => controller.isLoading.value
+                  child: VideoPlayer(videocontroller.videoPlayerController),
+                ),                Obx(() => videocontroller.isLoading.value
                     ? Center(child:CircularProgressIndicator())
                     : Center(child:IconButton(
-                  onPressed: () => controller.playPause(),
+                  onPressed: () => videocontroller.playPause(),
                   icon: Icon(
-                    controller.isPlaying.value
+                    videocontroller.isPlaying.value
                         ? Icons.pause
                         : Icons.play_arrow,
                     size: 50,
@@ -81,7 +82,7 @@ class ProductDetails extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
-                productController.data.title,
+                productController.data.course.title,
                 style: TextStyle(
                   fontWeight: FontWeight.w600, // semiBold equivalent
                   fontSize: 18,
@@ -125,10 +126,10 @@ class ProductDetails extends StatelessWidget {
           Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
               child: ShopNameAddressPriceButtons(
-                instructorName:productController.data.instructorName,
+                instructorName:productController.data.course.instructorName,
                 onPressed:()=>productController.addToCart(),
                 enroll: ()=>productController.enroll(),
-                rate: productController.data.rating,),
+                rate: productController.data.course.rating,),
             ), // .paddingSymmetric() replacement
             const SizedBox(height: 16), // 16.heightBox replacement
             Padding(
@@ -142,7 +143,7 @@ class ProductDetails extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
-                productController.data.description,
+                productController.data.course.description,
               ), // .text.make().paddingSymmetric() replacement
             ),
             //
@@ -207,18 +208,18 @@ class ProductDetails extends StatelessWidget {
                   mainAxisSpacing: 10,
                   mainAxisExtent: 320,
                 ),
-                itemCount: productController.list.length,
+                itemCount: productController.data.list.length,
                 itemBuilder: (BuildContext context, int index) {
 
                   return  ProductCardWithTag(id:
-                  productController.list[index].courseId,
-                    title:productController.list[index].title,
-                    price: productController.list[index].price.toString(),
-                    enrolled: productController.list[index].enrolled.toString(),
-                    rating: productController.list[index].rating,
-                    url: productController.list[index].thumbnail,
-                    controller: hcontroller,
-                    list: productController.list,);
+                  productController.data.list[index].courseId,
+                    title:productController.data.list[index].title,
+                    price: productController.data.list[index].price.toString(),
+                    enrolled: productController.data.list[index].enrolled.toString(),
+                    rating: productController.data.list[index].rating,
+                    url: productController.data.list[index].thumbnail,
+                    controller: controller,
+                    list: productController.data.list,);
                 },
               ),
             ), // .box.gray100.make() replacement

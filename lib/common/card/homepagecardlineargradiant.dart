@@ -1,6 +1,6 @@
-import 'package:firstapp/database_supabase/DataBase_Data_Class/courses_data_class.dart';
 import 'package:flutter/material.dart';
 
+import '../../DataClass/courses_data_class.dart';
 import '../button/showbutton.dart';
 import 'homepagecard.dart';
 

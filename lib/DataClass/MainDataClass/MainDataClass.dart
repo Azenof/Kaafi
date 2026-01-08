@@ -1,19 +1,4 @@
-import 'package:firstapp/database_supabase/DataBase_Data_Class/certificate_data_class.dart';
-import '../../DataBase_Data_Class/Catagory_Data_Class.dart';
-import '../../DataBase_Data_Class/payment_data_class.dart';
-import '../../DataBase_Data_Class/post_data_class.dart';
-import '../../DataBase_Data_Class/quiz_data_class.dart';
-import '../../DataBase_Data_Class/qustion_data_class.dart';
-import '../../DataBase_Data_Class/review_data_class.dart';
-import '../../DataBase_Data_Class/section_data_class.dart';
-import '../../DataBase_Data_Class/student_data_class.dart';
-import '../../DataBase_Data_Class/user_data_class.dart';
-import '../../DataBase_Data_Class/courses_data_class.dart';
-import '../../DataBase_Data_Class/enrollment_data_class.dart';
-import '../../DataBase_Data_Class/forum_data_class.dart';
-import '../../DataBase_Data_Class/insturctor_data_class.dart';
-import '../../DataBase_Data_Class/lesson_data_class.dart';
-import '../../DataBase_Data_Class/notification_data_class.dart';
+import '/DataClass/barrel_data_class.dart';
 
 class CompleteDatabase {
   final List<User> users;

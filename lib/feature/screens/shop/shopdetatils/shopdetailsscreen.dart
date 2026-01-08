@@ -1,14 +1,11 @@
 import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
 import 'package:firstapp/feature/screens/shop/home/widgets/appbar/widget/searchbar.dart'
     show RoundedSearchBar;
-import 'package:firstapp/feature/screens/shop/productdetail/ShopController.dart';
 import 'package:firstapp/feature/screens/shop/shopdetatils/ShopdetailsController.dart';
 import 'package:flutter/material.dart';
 import 'package:sticky_headers/sticky_headers/widget.dart';
-
 import '../../../../common/card/cardlogobanner.dart';
 import '../../../../common/card/productcardwithtag.dart';
-import '../../../../database_supabase/DataBase_Data_Class/courses_data_class.dart';
 import '../../../../navigation.dart';
 import 'widget/header.dart';
 import 'package:get/get.dart';
@@ -17,8 +14,8 @@ class ShopDetails extends StatelessWidget {
   const ShopDetails({super.key});
   @override
   Widget build(BuildContext context) {
-    final  controller=Shopdetailscontroller();
-    final homeController=HomeController();
+    final controller = Get.find<ShopDetailsController>();
+    final homeController = Get.find<HomeController>();
     final w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: const Color(0xFFF5F5F5), // Vx.gray100 replacement
@@ -57,13 +54,13 @@ class ShopDetails extends StatelessWidget {
                         itemCount: 10,
                         itemBuilder: (BuildContext context, int index) {
                           return  ProductCardWithTag(
-                            id: controller.list[index].courseId,
-                            title:controller.list[index].title,
-                            price:controller.list[index].price.toString(),
-                            enrolled: controller.list[index].enrolled.toString(),
-                            rating:controller.list[index].rating,
-                            url:controller.list[index].url,
-                            list:controller.list, controller: homeController,);
+                            id: controller.data.list[index].courseId,
+                            title:controller.data.list[index].title,
+                            price:controller.data.list[index].price.toString(),
+                            enrolled: controller.data.list[index].enrolled.toString(),
+                            rating:controller.data.list[index].rating,
+                            url:controller.data.list[index].url,
+                            list:controller.data.list, controller: homeController,);
                         },
                       ),
                     ), // .box.gray100.make() replacement

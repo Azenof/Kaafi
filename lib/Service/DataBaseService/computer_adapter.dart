@@ -1,6 +1,6 @@
-import '../DataBase_Data_Class/DataClassFactory.dart';
+import '../../DataClass/DataClassFactory.dart';
 
-class Computer_Adapter {
+class ComputerAdapter {
   Map<String, dynamic> _safeMap(dynamic item) =>
       Map<String, dynamic>.from(item as Map);
 

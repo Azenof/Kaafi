@@ -1,9 +1,7 @@
 import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../../../../common/card/productcardwithtag.dart';
-import '../../../../../../database_supabase/DataBase_Data_Class/courses_data_class.dart';
 import '../shopcardlisttitle.dart';
 
 class Part2 extends StatelessWidget {
@@ -11,13 +9,13 @@ class Part2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller=Get.put(HomeController());
+    final controller=Get.find<HomeController>();
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFFF5F5F5), // gray100 equivalent
+        color: const Color(0xFFF5F5F5),
         borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(8), // topRounded equivalent
-          topRight: Radius.circular(8), // topRounded equivalent
+          topLeft: Radius.circular(8),
+          topRight: Radius.circular(8),
         ),
       ),
       width: double.infinity,
@@ -62,13 +60,13 @@ class Part2 extends StatelessWidget {
               ),
               itemCount: 10,
               itemBuilder: (BuildContext context, int index) {
-                return  ProductCardWithTag(id: controller.list[index].courseId,
-                  title: controller.list[index].title,
-                  price: controller.list[index].price.toString(),
-                  enrolled: controller.list[index].enrolled.toString(),
-                  rating: controller.list[index].rating,
-                  url: controller.list[index].thumbnail, controller:controller,
-                  list: controller.list,);
+                return  ProductCardWithTag(id: controller.data.list[index].courseId,
+                  title: controller.data.list[index].title,
+                  price: controller.data.list[index].price.toString(),
+                  enrolled: controller.data.list[index].enrolled.toString(),
+                  rating: controller.data.list[index].rating,
+                  url: controller.data.list[index].thumbnail, controller:controller,
+                  list: controller.data.list,);
               },
             ),
           ],

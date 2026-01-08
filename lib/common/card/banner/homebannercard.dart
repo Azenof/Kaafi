@@ -1,8 +1,8 @@
 import 'package:firstapp/common/image/bannerimg.dart';
 import 'package:flutter/material.dart';
 
+import '../../../DataClass/courses_data_class.dart';
 import '../../../constant/imageconstant.dart';
-import '../../../database_supabase/DataBase_Data_Class/courses_data_class.dart';
 import '../homepagecard.dart';
 
 class HomeBannerCard extends StatelessWidget {

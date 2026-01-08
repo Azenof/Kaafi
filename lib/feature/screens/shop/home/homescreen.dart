@@ -18,8 +18,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> _homeScaffoldKey = GlobalKey<ScaffoldState>();
-    final controller=Get.put(HomeController());
-    final AccountController accountController=AccountController();
+    final controller=Get.find<HomeController>();
+    final AccountController accountController=Get.find<AccountController>();
     SmallStorage smallStorage=SmallStorage.instance;
 
     return Scaffold(
@@ -27,8 +27,8 @@ class HomeScreen extends StatelessWidget {
       bottomNavigationBar: const BottomNav(),
       appBar: homeAppBar(_homeScaffoldKey),
       drawer: MyDrawer(
-        userName:controller.name.value,
-        userEmail:controller.email.value,
+        userName:controller.data.userName,
+        userEmail:controller.data.email,
 
         scaffoldKey:_homeScaffoldKey, controller: accountController,
       ),
@@ -54,7 +54,7 @@ class HomeScreen extends StatelessWidget {
                 case 1:
                   return Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: Part1(list: controller.list,),
+                    child: Part1(list: controller.data.list,),
                   ); // .paddingSymmetric() replacement
                 case 2:
                   return const SizedBox(height: 10); // 10.heightBox replacement

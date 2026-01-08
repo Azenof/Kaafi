@@ -2,7 +2,6 @@ import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dar
 import 'package:flutter/material.dart';
 
 import '../../../../../common/card/list/companycardlist.dart' show ShopCardList;
-import '../../../../../database_supabase/DataBase_Data_Class/courses_data_class.dart';
 import 'titlesubtitlesubtitlebutton.dart';
 
 class ShopCardlistTitle extends StatelessWidget {
@@ -40,7 +39,7 @@ class ShopCardlistTitle extends StatelessWidget {
           const SizedBox(height: 20), // 20.heightBox replacement
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: ShopCardList(autoscroll: autoscroll, list: controller.list,),
+            child: ShopCardList(autoscroll: autoscroll, list: controller.data.list,),
           ),
         ],
       ),

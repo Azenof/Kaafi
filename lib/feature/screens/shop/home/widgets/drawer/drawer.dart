@@ -67,14 +67,14 @@ class MyDrawer extends StatelessWidget {
               title: 'Enrolled',
               icon: Icons.request_page_outlined,
               ontap: () {
-                Get.to(() => Wishlist(controller: controller, list: controller.enrolledlist));
+                Get.to(() => Wishlist(controller: controller, list: controller.data.enrolledList));
                 scaffoldKey.currentState?.closeDrawer();
               },
             ),
             CustomListTitle(
               title: 'Wishlist',
               icon: Icons.favorite_border_outlined,
-              ontap: () => Get.to(() =>Wishlist(controller: controller,list: controller.wishlist,)),
+              ontap: () => Get.to(() =>Wishlist(controller: controller,list: controller.data.wishlist,)),
             ),
 
             CustomListTitle(
