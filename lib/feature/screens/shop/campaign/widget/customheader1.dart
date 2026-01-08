@@ -1,18 +1,16 @@
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../common/button/circulariconbutton.dart';
-import '../../../../../common/icon/customimgicon.dart' show Customimageicon;
-import '../controller/campaigncontroller.dart' show CustomHeaderController;
-import 'campaigntitlebox.dart';
+
 
 class CustomHeader1 extends StatelessWidget {
   final VoidCallback sort;
   final VoidCallback filter;
 
   CustomHeader1({super.key, required this.sort, required this.filter});
-
-  final CustomHeaderController controller = Get.put(CustomHeaderController());
+  final CampaignController controller = Get.find<CampaignController>();
 
   @override
   Widget build(BuildContext context) {

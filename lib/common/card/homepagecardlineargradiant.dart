@@ -1,8 +1,9 @@
-import 'package:firstapp/database_supabase/DataBase_Data_Class/courses_data_class.dart';
-import 'package:flutter/material.dart';
+import '/exports/data_paths.dart';
 
-import '../button/showbutton.dart';
-import 'homepagecard.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+
 
 class HomePageCardLinearGradiant extends StatelessWidget {
   const HomePageCardLinearGradiant({

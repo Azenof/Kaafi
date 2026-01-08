@@ -1,15 +1,8 @@
-import 'package:firstapp/common/button/customelevatedbutton.dart';
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import '../../database_supabase/DataBase_Data_Class/courses_data_class.dart';
-import '../../feature/screens/shop/productdetail/productdetailsscreen.dart';
-import 'widget/productavailabilty.dart';
-import 'widget/productprice.dart';
-import 'widget/productsubtitle.dart';
-import 'widget/producttitlewithverifiacation.dart';
-import 'widget/ratingwithtotalrated.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
@@ -44,8 +37,9 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final h=MediaQuery.heightOf(context);
     final w=MediaQuery.widthOf(context);
+    final homecontroller=Get.find<HomeController>();
     return GestureDetector(
-      onTap: () => Get.to(() => ProductDetails(id: id, list:list,)),
+      onTap: () => Get.to(() => ProductDetails(id: id)),
       child: Container(
         width:w*0.6,
         decoration: BoxDecoration(

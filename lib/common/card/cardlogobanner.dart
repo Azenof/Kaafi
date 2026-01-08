@@ -1,10 +1,10 @@
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../constant/imageconstant.dart';
-import '../image/bannerimg.dart';
-import 'cardwithattributes.dart';
-import 'widget/ratingwithtotalrated.dart';
+
 
 class CardLogoBaner extends StatelessWidget {
   const CardLogoBaner({

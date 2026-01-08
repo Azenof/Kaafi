@@ -1,12 +1,10 @@
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../../../../common/card/banner/homebannercard.dart';
-import '../../../../../../common/card/homepagecard.dart' show HomePageCard;
-import '../../../../../../common/card/homepagecardlineargradiant.dart';
-import '../../../../../../constant/colorconstant.dart';
-import '../../../../../../database_supabase/DataBase_Data_Class/courses_data_class.dart';
-import '../homebuttons.dart';
+
 
 class Part1 extends StatelessWidget {
   const Part1({super.key, required this.list});

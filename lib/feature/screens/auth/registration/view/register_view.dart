@@ -1,10 +1,9 @@
-import 'package:firstapp/Utils/validator/validator.dart';
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../auth/widgets/button.dart';
-import '../../../../../auth/widgets/text_field.dart';
-import '../controller/register_controller.dart';
+
 
 
 class RegisterView extends StatelessWidget {

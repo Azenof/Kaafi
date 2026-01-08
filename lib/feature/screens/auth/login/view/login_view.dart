@@ -1,11 +1,9 @@
+import '/exports/data_paths.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../../Utils/validator/validator.dart';
-import '../../../../../auth/widgets/button.dart';
-import '../../../../../auth/widgets/text_field.dart';
-import '../../registration/view/register_view.dart';
-import '../controller/Login_Controller.dart';
+
+
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});

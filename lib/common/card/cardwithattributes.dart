@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
+import '/exports/data_paths.dart';
 
-import '../../constant/imageconstant.dart';
-import '../icon/codicon.dart';
-import '../image/roundedimg.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+
 
 class CardWithAttribute extends StatelessWidget {
   const CardWithAttribute({

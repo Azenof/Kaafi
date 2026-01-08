@@ -1,38 +1,29 @@
-import 'package:firstapp/Utils/video_module/video_module.dart';
-import 'package:firstapp/ai_integrate.dart';
-import 'package:firstapp/feature/screens/shop/productdetail/ShopController.dart';
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:video_player/video_player.dart';
 
-import '../../../../Utils/video_module/video_widget.dart';
-import '../../../../common/card/banner/bannercarousel.dart';
-import '../../../../common/card/productcardwithtag.dart';
-import '../../../../common/card/shopinfoandbuttoncard.dart'
-    show ShopNameAddressPriceButtons;
-import '../../../../constant/imageconstant.dart';
-import '../../../../constant/stringconstant.dart';
-import '../../../../database_supabase/DataBase_Data_Class/courses_data_class.dart';
-import '../../../../navigation.dart';
-import '../home/widgets/appbar/widget/searchbar.dart';
-import 'widgets/titleandcollection.dart';
-import 'widgets/variants.dart';
+
+
 
 class ProductDetails extends StatelessWidget {
   final String id;
-  const ProductDetails({super.key, required this.id, required this.list});
-  final List<Course>list;
+  const ProductDetails({super.key,
+    required this.id,});
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-    final ProductController productController=ProductController(id: id);
-    final controller=Get.put(VideoController(url: productController.data.url));
+    final ProductController productController=Get.find<ProductController>();
+    final HomeController controller =Get.find<HomeController>();
+    final videocontroller=Get.put(VideoController(url:productController.data.course.url));
 
     return Scaffold(
       bottomNavigationBar: const BottomNav(),
-      floatingActionButton: FloatingActionButton(child: Icon(Iconsax.message),onPressed: ()=>Get.to(()=>Ai_Chat())),
+      floatingActionButton: FloatingActionButton(child: Icon(Iconsax.message),
+          onPressed: ()=>Get.to(()=>Ai_Chat())),
       appBar: AppBar(
         surfaceTintColor: Colors.white, // Vx.white replacement
         title: const RoundedSearchBar(title: "Search Products"),
@@ -55,14 +46,34 @@ class ProductDetails extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
-              child:VideoModule(controller: controller),
+              child:Stack(
+              alignment: Alignment.center,
+              children: [
+                AspectRatio(
+                  aspectRatio: videocontroller
+                      .videoPlayerController.value.aspectRatio,
+                  child: VideoPlayer(videocontroller.videoPlayerController),
+                ),                Obx(() => videocontroller.isLoading.value
+                    ? Center(child:CircularProgressIndicator())
+                    : Center(child:IconButton(
+                  onPressed: () => videocontroller.playPause(),
+                  icon: Icon(
+                    videocontroller.isPlaying.value
+                        ? Icons.pause
+                        : Icons.play_arrow,
+                    size: 50,
+                    color: Colors.white.withValues(alpha: 0.8),
+                  ),
+                )),
+                ),
+              ],),
             ), // .paddingSymmetric() replacement
 
             const SizedBox(height: 10), // 10.heightBox replacement
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
-                productController.data.title,
+                productController.data.course.title,
                 style: TextStyle(
                   fontWeight: FontWeight.w600, // semiBold equivalent
                   fontSize: 18,
@@ -106,8 +117,10 @@ class ProductDetails extends StatelessWidget {
           Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
               child: ShopNameAddressPriceButtons(
-                instructorName:productController.data.instructorName,
-                onPressed:()=>productController.addToCart(),),
+                instructorName:productController.data.course.instructorName,
+                onPressed:()=>productController.addToCart(),
+                enroll: ()=>productController.enroll(),
+                rate: productController.data.course.rating,),
             ), // .paddingSymmetric() replacement
             const SizedBox(height: 16), // 16.heightBox replacement
             Padding(
@@ -121,60 +134,52 @@ class ProductDetails extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
-                productController.data.description,
+                productController.data.course.description,
               ), // .text.make().paddingSymmetric() replacement
             ),
-            const SizedBox(height: 20), // 20.heightBox replacement
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Text(
-                "Specification",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-              ), // .text.bold.size(18).make().paddingSymmetric() replacement
-            ),
-            const SizedBox(height: 10), // 10.heightBox replacement
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: ListView.separated(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: 6,
-                separatorBuilder: (BuildContext context, int index) {
-                  return const SizedBox(height: 10); // 10.heightBox replacement
-                },
-                itemBuilder: (BuildContext context, int index) {
-
-                  return Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          //productController.data.status.keys.first,
-                          '',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: const Color(
-                              0xFF616161,
-                            ), // gray700 equivalent
-                          ),
-                        ), // .text.size(16).gray700.make() replacement
-                      ),
-                      Expanded(
-                        child: Text(
-                          //productController.data.status.keys.last,'
-                          '',
-                          style: TextStyle(fontSize: 16, color: Colors.black),
-                        ), // .text.size(16).black.make() replacement
-                      ),
-                    ],
-                  );
-                },
-              ), // .paddingSymmetric() replacement
-            ),
+            //
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(horizontal: 10),
+            //   child: ListView.separated(
+            //     physics: const NeverScrollableScrollPhysics(),
+            //     shrinkWrap: true,
+            //     itemCount: 6,
+            //     separatorBuilder: (BuildContext context, int index) {
+            //       return const SizedBox(height: 10); // 10.heightBox replacement
+            //     },
+            //     itemBuilder: (BuildContext context, int index) {
+            //
+            //       return Row(
+            //         children: [
+            //           Expanded(
+            //             child: Text(
+            //               //productController.data.status.keys.first,
+            //               '',
+            //               style: TextStyle(
+            //                 fontSize: 16,
+            //                 color: const Color(
+            //                   0xFF616161,
+            //                 ), // gray700 equivalent
+            //               ),
+            //             ), // .text.size(16).gray700.make() replacement
+            //           ),
+            //           Expanded(
+            //             child: Text(
+            //               //productController.data.status.keys.last,'
+            //               '',
+            //               style: TextStyle(fontSize: 16, color: Colors.black),
+            //             ), // .text.size(16).black.make() replacement
+            //           ),
+            //         ],
+            //       );
+            //     },
+            //   ), // .paddingSymmetric() replacement
+            // ),
             const SizedBox(height: 16), // 16.heightBox replacement
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
-                "Related Products",
+                "Related Courses",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ), // .text.bold.size(16).make().paddingSymmetric() replacement
             ),
@@ -194,15 +199,18 @@ class ProductDetails extends StatelessWidget {
                   mainAxisSpacing: 10,
                   mainAxisExtent: 320,
                 ),
-                itemCount: 10,
+                itemCount: productController.data.list.length,
                 itemBuilder: (BuildContext context, int index) {
 
-                  return  ProductCardWithTag(id: id,
-                    title:list[index].title,
-                    price: list[index].price.toString(),
-                    enrolled: list[index].enrolled.toString(),
-                    rating: list[index].rating,
-                    url: list[index].thumbnail, list: list,);
+                  return  ProductCardWithTag(id:
+                  productController.data.list[index].courseId,
+                    title:productController.data.list[index].title,
+                    price: productController.data.list[index].price.toString(),
+                    enrolled: productController.data.list[index].enrolled.toString(),
+                    rating: productController.data.list[index].rating,
+                    url: productController.data.list[index].thumbnail,
+                    controller: controller,
+                    list: productController.data.list,);
                 },
               ),
             ), // .box.gray100.make() replacement
@@ -212,5 +220,3 @@ class ProductDetails extends StatelessWidget {
     );
   }
 }
-
-

@@ -1,30 +1,25 @@
-import 'package:firstapp/feature/screens/shop/account/widget/wishlist.dart';
-import 'package:firstapp/feature/screens/shop/cart/cartController.dart';
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../common/text/titletext.dart';
-import '../../../../constant/imageconstant.dart';
-import '../../../../database_supabase/DataBase_Data_Class/courses_data_class.dart';
-import '../../../../navigation.dart';
-import 'widget/bottomtitle.dart';
 
 class CartSrceen extends StatelessWidget {
   const CartSrceen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final controller=Get.put(CartController());
+    final controller = Get.find<CartController>();
     final w = MediaQuery.of(context).size.width;
-    controller.sum.value=0.0;
+    controller.sum.value = 0.0;
     controller.getCartCourseCost();
 
     return Scaffold(
       bottomNavigationBar: const BottomNav(),
-      backgroundColor: Colors.white, // Vx.white replacement
+      backgroundColor: Colors.white,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.white, // Vx.white replacement
+        backgroundColor: Colors.white,
         title: const TitleText(title: 'Shopping Cart', size: 22),
         actions: [
           IconButton(
@@ -37,51 +32,67 @@ class CartSrceen extends StatelessWidget {
         width: w,
         child: Stack(
           children: [
-            (controller.cartlist.isNotEmpty)
-                ? Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: ListView.separated(
-                      itemCount: controller.cartlist.length,
-                      separatorBuilder: (BuildContext context, int index) {
-                        return const SizedBox(
-                          height: 10,
-                        ); // 10.heightBox replacement
+            (controller.data.cartList.isNotEmpty)
+                ? SingleChildScrollView(
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    ListView.separated(
+                      itemCount: controller.data.cartList.length,
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      separatorBuilder:
+                          (BuildContext context, int index) {
+                        return const SizedBox(height: 10);
                       },
                       itemBuilder: (BuildContext context, int index) {
-                        Course c=controller.getCartCourses(controller.cartlist[index]);
-                        return WishListComponent(title:c.title
-                            ,price:c.price.toString(), url:c.thumbnail,);// .text.make().box.red100.make() replacement
+                        Course c = controller.data.getCartCourses(
+                            controller.data.cartList[index]);
+                        return WishListComponent(
+                          title: c.title,
+                          price: c.price.toString(),
+                          url: c.thumbnail,
+                        );
                       },
                     ),
-                  ) // .box.padding().make() replacement
-                : Column(
-                    children: [
-                      Center(
-                        child: const Image(
-                          image: AssetImage(ImageCons.cart),
-                          width: 400,
-                        ),
-                      ), // .centered() replacement
-                      Text(
-                        'Nothing to add to Cart',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600, // semiBold equivalent
-                          color: const Color(0xFF9E9E9E), // gray500 equivalent
-                          fontSize: 16,
-                        ),
-                      ), // .text.semiBold.gray500.size(16).make() replacement
-                    ],
+                    const SizedBox(height: 80), // spacing above bottom bar
+                  ],
+                ),
+              ),
+            )
+                : SingleChildScrollView(
+              child: Column(
+                children: [
+                  Center(
+                    child: const Image(
+                      image: AssetImage(ImageCons.cart),
+                      width: 300, // responsive size
+                    ),
                   ),
+                  const SizedBox(height: 20),
+                  Text(
+                    'Nothing to add to Cart',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFF9E9E9E),
+                      fontSize: 16,
+                    ),
+                  ),
+                  const SizedBox(height: 80), // spacing above bottom bar
+                ],
+              ),
+            ),
             Positioned(
-              bottom: 0, // BorderSide.strokeAlignInside replacement
+              bottom: 0,
               child: SizedBox(
                 width: w,
-                child: BottomTitle(value:controller.sum.value ,),
-              ), // .box.width(w).make() replacement
+                child: BottomTitle(value: controller.sum.value),
+              ),
             ),
           ],
         ),
-      ), // .box.width(w).make() replacement
+      ),
     );
   }
 }

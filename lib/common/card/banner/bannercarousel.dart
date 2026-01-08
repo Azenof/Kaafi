@@ -1,4 +1,7 @@
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
+
 
 class BannerCarousel extends StatefulWidget {
   final List<String> imagePaths;

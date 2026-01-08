@@ -1,16 +1,9 @@
-import 'package:firstapp/ai_integrate.dart';
-import 'package:firstapp/feature/screens/shop/account/accountController.dart';
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../../constant/imageconstant.dart';
-import '../../../../../../navigation.dart';
-import '../../../account/accountscreen.dart';
-import '../../../account/widget/orderlist/orderlist.dart';
-import '../../../account/widget/wishlist.dart';
-import '../../../cart/cartscreen.dart';
-import '../../homescreen.dart';
-import 'widget/customlisttitle.dart';
+
 
 class MyDrawer extends StatelessWidget {
   final String userName;
@@ -61,41 +54,21 @@ class MyDrawer extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20), // 20.heightBox replacement
-            CustomListTitle(
-              title: 'Home',
-              icon: Icons.home_outlined,
-              ontap: () {
 
-              },
-            ),
-            CustomListTitle(
-              title: 'Account',
-              icon: Icons.person_outline,
-              ontap: () {
 
-              },
-            ),
             CustomListTitle(
-              title: 'Orders',
+              title: 'Enrolled',
               icon: Icons.request_page_outlined,
               ontap: () {
-                Get.to(() => const Orderlist());
+                Get.to(() => Wishlist(controller: controller, list: controller.data.enrolledList));
                 scaffoldKey.currentState?.closeDrawer();
-              },
-            ),
-            CustomListTitle(
-              title: 'Cart',
-              icon: Icons.shopping_cart_outlined,
-              ontap: () {
-
               },
             ),
             CustomListTitle(
               title: 'Wishlist',
               icon: Icons.favorite_border_outlined,
-              ontap: () => Get.to(() =>Wishlist(controller: controller,list: controller.wishlist,)),
+              ontap: () => Get.to(() =>Wishlist(controller: controller,list: controller.data.wishlist,)),
             ),
-
 
             CustomListTitle(
               title: 'Chat with KAFFI Bot',

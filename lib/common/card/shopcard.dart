@@ -1,9 +1,8 @@
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../feature/screens/shop/shopdetatils/shopdetailsscreen.dart';
-import 'widget/productsubtitle.dart';
-import 'widget/ratingwithtotalrated.dart';
-import 'widget/shoptitlewithverification.dart';
+
 
 class ShopCard extends StatelessWidget {
   const ShopCard({
@@ -27,7 +26,7 @@ class ShopCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Get.to(() => const ShopDetails(id: '', list: [],)),
+      onTap: () => Get.to(() => const ShopDetails()),
       child: Container(
         width: 160,
         decoration: BoxDecoration(

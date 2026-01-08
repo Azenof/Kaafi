@@ -1,10 +1,9 @@
-import 'package:firstapp/feature/screens/shop/account/widget/wishlist.dart';
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../auth/forgetscreen/forgetpassword.dart';
-import '../accountController.dart';
-import 'IconListtile.dart';
+
 
 class AccountMenuItem {
   final String title;
@@ -34,14 +33,17 @@ class Fourtitleswithicon extends StatelessWidget {
         title: "Enrolled Courses",
         icon: Icons.school,
         color: const Color(0xFF4CAF50).withValues(alpha: 0.85),
-        onTap: () =>Get.to(()=>Wishlist(controller: controller, list: controller.enrolledlist,)),
+        onTap: () =>Get.to(()=>Wishlist(controller: controller,
+          title: "Enrolled Courses",
+          list: controller.data.enrolledList,)),
       ),
       AccountMenuItem(
         title: "Wishlist",
         icon: Icons.favorite_border_outlined,
         color: const Color(0xFFF44336),
         onTap: () {
-          Get.to(() => Wishlist(controller: controller, list: controller.wishlist,));
+          Get.to(() => Wishlist(controller: controller,
+            list: controller.data.wishlist,));
         },
       ),
       AccountMenuItem(

@@ -1,7 +1,9 @@
-import 'package:firstapp/feature/screens/shop/account/widget/orderlist/widgets/ordercard.dart';
-import 'package:flutter/material.dart';
+import '/exports/data_paths.dart';
 
-import '../widgets/noroder.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+
 
 class ConfirmedScreen extends StatelessWidget {
   const ConfirmedScreen({super.key, this.noitem = true});

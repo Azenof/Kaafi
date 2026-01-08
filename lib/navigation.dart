@@ -1,22 +1,17 @@
-import 'package:firstapp/Utils/AppString.dart';
-import 'package:firstapp/database_supabase/DataBase_Data_Class/courses_data_class.dart';
-import 'package:firstapp/database_supabase/DataBase_Service/CenterDataBase/Database_service.dart';
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-import 'feature/screens/shop/account/accountscreen.dart';
-import 'feature/screens/shop/campaign/campaign.dart';
-import 'feature/screens/shop/cart/cartscreen.dart';
-import 'feature/screens/shop/home/homescreen.dart';
 
 class NavigationController extends GetxController {
   static NavigationController get instance => Get.find();
   final Rx<int> selectedIndex = 0.obs;
-  DatabaseService db=DatabaseService.instance;
+
   late final screens = [
     const HomeScreen(),
-     CampaignScreen(id: '', list:db.supplyData(AppString.course)as List<Course>,),
+     const CampaignScreen(),
     const CartSrceen(),
     const AccountScreen(),
   ];

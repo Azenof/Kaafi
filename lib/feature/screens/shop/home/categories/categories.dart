@@ -1,9 +1,9 @@
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../navigation.dart';
-import 'widgets/categoriesdetail.dart';
-import 'widgets/imgwithtitle.dart';
+
 
 class VerticalTabController extends GetxController {
   var selectedIndex = 0.obs;

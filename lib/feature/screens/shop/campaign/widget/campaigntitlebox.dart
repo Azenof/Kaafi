@@ -1,9 +1,12 @@
-import 'package:flutter/material.dart';
+import '/exports/data_paths.dart';
 
-import '../controller/campaigncontroller.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+
 
 class CampaignTitlebox extends StatelessWidget {
-  final CustomHeaderController controller;
+  final CampaignController controller;
   final bool isSelected;
   final int index;
   final String title;

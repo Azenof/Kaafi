@@ -1,9 +1,11 @@
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../constant/imageconstant.dart';
-import '../../../database_supabase/DataBase_Data_Class/courses_data_class.dart';
+import '../../../data/models/courses_data_class.dart';
 import '../shopcard.dart';
+
 
 class ShopCardList extends StatelessWidget {
   const ShopCardList({

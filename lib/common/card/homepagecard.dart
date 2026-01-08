@@ -1,11 +1,8 @@
-import 'package:firstapp/database_supabase/DataBase_Data_Class/courses_data_class.dart';
-import 'package:firstapp/database_supabase/DataBase_Service/CenterDataBase/Database_service.dart';
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../constant/imageconstant.dart';
-import '../button/showbutton.dart';
-import 'productcard.dart';
 
 class HomePageCard extends StatelessWidget {
   const HomePageCard({
@@ -33,6 +30,7 @@ class HomePageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller=Get.find<HomeController>();
     return Container(
       color: color,
       padding: const EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
@@ -69,7 +67,8 @@ class HomePageCard extends StatelessWidget {
           ProductCardList(
             autoscroll: autoscroll,
             isSemibold: isSemibold,
-            applyrating: applyrating, list:DatabaseService.instance.database.value.courses,
+            applyrating: applyrating,
+            list:controller.data.list,
           ),
         ],
       ),

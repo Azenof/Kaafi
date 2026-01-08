@@ -1,11 +1,13 @@
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import '../../../../../common/button/circulariconbutton.dart';
-import '../../../../../constant/imageconstant.dart';
 
-class Profilewitheditbutton extends StatelessWidget {
-  const Profilewitheditbutton({super.key});
 
+class ProfileWithEditButton extends StatelessWidget {
+  const ProfileWithEditButton({super.key, required this.onpressd});
+  final Function onpressd;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -25,7 +27,7 @@ class Profilewitheditbutton extends StatelessWidget {
                 height: 60,
                 color: Color(0xFFBDBDBD), // Vx.gray400 replacement
                 fit: BoxFit.contain,
-                image: AssetImage(ImageCons.person),
+                image: NetworkImage(''),
               ),
             ),
           ),
@@ -51,7 +53,7 @@ class Profilewitheditbutton extends StatelessWidget {
               minimumSize: const Size(30, 30),
               backgroundColor: Colors.white,
               iconColor: Colors.black,
-              onPressed: () {},
+              onPressed:()=> onpressd,
             ),
           ),
         ),

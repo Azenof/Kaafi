@@ -1,10 +1,8 @@
-import 'package:firstapp/feature/screens/shop/account/accountController.dart';
-import 'package:firstapp/feature/screens/shop/account/widget/FourTitleswithIcon.dart';
-import 'package:firstapp/feature/screens/shop/account/widget/FourbuttonRow.dart';
-import 'package:firstapp/feature/screens/shop/account/widget/Profilewitheditbutton.dart';
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
-import '../../../../common/text/titletext.dart';
-import '../../../../navigation.dart';
+import 'package:get/get.dart';
+
 
 
 
@@ -13,7 +11,8 @@ class AccountScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   final AccountController controller =AccountController();
+   final AccountController controller =Get.find<AccountController>();
+
     return Scaffold(
       bottomNavigationBar: const BottomNav(),
       appBar: AppBar(
@@ -31,13 +30,13 @@ class AccountScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          const Center(
-            child: Profilewitheditbutton(),
+           Center(
+            child:ProfileWithEditButton(onpressd:()=>controller.service.uploadImage(context),),
           ), // .centered() replacement
           const SizedBox(height: 20), // 20.heightBox replacement
-          TitleText(title: controller.user!.name, size: 20),
+          TitleText(title: controller.data.userName, size: 20),
           Text(
-            controller.user!.email,
+            controller.data.email,
             style: TextStyle(
               color: const Color(0xFF9E9E9E), // gray500 equivalent
             ),

@@ -1,5 +1,8 @@
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 
 class InfoPorvideController extends GetxController{
   static InfoPorvideController get instance=>Get.find();

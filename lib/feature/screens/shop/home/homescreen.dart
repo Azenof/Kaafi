@@ -1,36 +1,29 @@
-import 'package:firstapp/LocalStorage/smallStorage.dart';
-import 'package:firstapp/feature/screens/shop/account/accountController.dart';
-import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../common/card/banner/bannercarousel.dart' show BannerCarousel;
-import '../../../../constant/imageconstant.dart';
-import '../../../../main.dart';
-import '../../../../navigation.dart';
-import 'widgets/appbar/appbar.dart';
-import 'widgets/bodypart/part1.dart';
-import 'widgets/bodypart/part2.dart';
-import 'widgets/drawer/drawer.dart';
+
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> _homeScaffoldKey = GlobalKey<ScaffoldState>();
-    final controller=Get.put(HomeController());
-    final AccountController accountController=AccountController();
+    final GlobalKey<ScaffoldState> homeScaffoldKey = GlobalKey<ScaffoldState>();
+    final controller=Get.find<HomeController>();
+    final AccountController accountController=Get.find<AccountController>();
     SmallStorage smallStorage=SmallStorage.instance;
 
     return Scaffold(
-      key: _homeScaffoldKey,
+      key: homeScaffoldKey,
       bottomNavigationBar: const BottomNav(),
-      appBar: homeAppBar(_homeScaffoldKey),
+      appBar: homeAppBar(homeScaffoldKey),
       drawer: MyDrawer(
-        userName:controller.name.value,
-        userEmail:controller.email.value,
+        userName:controller.data.userName,
+        userEmail:controller.data.email,
 
-        scaffoldKey:_homeScaffoldKey, controller: accountController,
+        scaffoldKey:homeScaffoldKey, controller: accountController,
       ),
       body: CustomScrollView(
         clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -54,12 +47,12 @@ class HomeScreen extends StatelessWidget {
                 case 1:
                   return Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: Part1(list: controller.list,),
+                    child: Part1(list: controller.data.list,),
                   ); // .paddingSymmetric() replacement
                 case 2:
                   return const SizedBox(height: 10); // 10.heightBox replacement
                 case 3:
-                  return  Part2(list:controller.list,);
+                  return  Part2();
                 default:
                   return Container();
               }

@@ -2,16 +2,27 @@
 # 🎓 KAAFI – Low-Cost Niche Course Platform
 
 <div align="center">
-  
-*Empowering Practical Skills Through Affordable Micro-Learning*
+
+*Learnign platform for gaining life skills and enhanace your regular life*
 
 **Version:** 1.0 | **Date:** October 28, 2025 | **Status:** 📋 Active
+
 
 [![GitHub](https://img.shields.io/badge/Status-Under%20Development-yellow)](https://github.com/)
 [![License](https://img.shields.io/badge/License-MIT-blue)](https://github.com/)
 [![Platform](https://img.shields.io/badge/Platform-Web%20%26%20Mobile-success)](https://github.com/)
 
 </div>
+**📷ScreenShots**
+<img width="1630" height="917" alt="image" src="https://github.com/user-attachments/assets/01f76867-8296-4d24-a3fc-86ee73dc69d0" />
+<img width="1630" height="917" alt="image" src="https://github.com/user-attachments/assets/52be7250-925b-4e06-8f31-75c57e8a1431" />
+<img width="1630" height="917" alt="image" src="https://github.com/user-attachments/assets/df917b47-1f25-4644-876d-139da75ffa21" />
+<img width="1630" height="917" alt="image" src="https://github.com/user-attachments/assets/d06724cf-af90-4d05-98a8-512b70a17f98" />
+<img width="1630" height="917" alt="image" src="https://github.com/user-attachments/assets/2c3f30f0-ed24-435e-8422-fb36aea90a30" />
+<img width="1630" height="917" alt="image" src="https://github.com/user-attachments/assets/d2b6d4f5-9788-4ef3-aa26-3199644ef04a" />
+<img width="1630" height="917" alt="image" src="https://github.com/user-attachments/assets/246a47b2-a9e0-4ce4-b507-c50b5204b4cb" />
+<img width="1630" height="917" alt="image" src="https://github.com/user-attachments/assets/c7ad36c7-9a08-468e-92ac-be39915ccea2" />
+<img width="1630" height="917" alt="image" src="https://github.com/user-attachments/assets/b9e010f9-1c7d-442b-aa51-30b1c6ef963c" />
 
 ## 📖 Table of Contents
 - [Introduction](#introduction)
@@ -107,25 +118,25 @@ KAAFI enables:
 ### Tech Stack
 
 Frontend:
-  - Primary: Kotlin/Flutter
-  - Target: Web, iOS, Android
+- Primary: Kotlin/Flutter
+- Target: Web, iOS, Android
 
 Backend:
-  - Language: Kotlin/Java/python
-  - Framework: Spring Boot / Ktor/FastApi/Flask
-  - API: RESTful APIs
-  - For now using supabase
+- Language: Kotlin/Java/python
+- Framework: Spring Boot / Ktor/FastApi/Flask
+- API: RESTful APIs
+- For now using supabase
 
 Database:
-  - Primary: Supabase Database
+- Primary: Supabase Database
 
 Storage:
-  - Videos: AWS S3 / Cloud Storage/supabase storage
-  - Files: Cloud-based storage
+- Videos: AWS S3 / Cloud Storage/supabase storage
+- Files: Cloud-based storage
 
 Infrastructure:
-  - Cloud: AWS / Firebase / Azure/Supabase
-  - CI/CD: GitHub Actions / Jenkins
+- Cloud: AWS / Firebase / Azure/Supabase
+- CI/CD: GitHub Actions / Jenkins
 
 
 ### System Diagram
@@ -216,30 +227,30 @@ Infrastructure:
 ### Supported Platforms
 
 🌐 Web Browsers:
-   - Chrome (latest)
-   - Safari (latest)
-   - Edge (latest)
-   - Firefox (latest)
+- Chrome (latest)
+- Safari (latest)
+- Edge (latest)
+- Firefox (latest)
 
 📱 Mobile:
-   - Android 8.0+
-   - iOS 13+
+- Android 8.0+
+- iOS 13+
 
 
 ### Infrastructure Requirements
 
 ☁️ Cloud Services:
-   - AWS / Google Cloud / Azure /Supabase
-   - Firebase/Supabase for authentication (optional)
-   - CDN for video delivery
+- AWS / Google Cloud / Azure /Supabase
+- Firebase/Supabase for authentication (optional)
+- CDN for video delivery
 
 🗄️ Database:
-   - PostGreSql
-   - Regular backup system
+- PostGreSql
+- Regular backup system
 
 📦 Storage:
-   - Video: Cloud storage with CDN
-   - Static: Object storage
+- Video: Cloud storage with CDN
+- Static: Object storage
 
 
 ---
@@ -277,7 +288,7 @@ flutter run
 
 
 ---
-## 🤝 SQL query of Supabase Postgre 
+## 🤝 SQL query of Supabase Postgre
 # 📊 KAAFI Database Schema
 
 <div align="center">
@@ -313,39 +324,39 @@ sql
 #### 1. **User Table** - Main user authentication and profile
 sql
 CREATE TABLE public."User" (
-    "userId" TEXT NOT NULL PRIMARY KEY,
-    name TEXT,
-    email TEXT,
-    role TEXT,
-    img TEXT NOT NULL DEFAULT ''''''::TEXT,
-    enrolled_courses TEXT[] NOT NULL DEFAULT '{}'::TEXT[],
-    wish_list TEXT[] NOT NULL DEFAULT '{}'::TEXT[],
-    cart TEXT[] NOT NULL DEFAULT '{}'::TEXT[],
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+"userId" TEXT NOT NULL PRIMARY KEY,
+name TEXT,
+email TEXT,
+role TEXT,
+img TEXT NOT NULL DEFAULT ''''''::TEXT,
+enrolled_courses TEXT[] NOT NULL DEFAULT '{}'::TEXT[],
+wish_list TEXT[] NOT NULL DEFAULT '{}'::TEXT[],
+cart TEXT[] NOT NULL DEFAULT '{}'::TEXT[],
+created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
 
 #### 2. **Student Table** - Student-specific data
 sql
 CREATE TABLE public."Student" (
-    "studentId" UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,
-    "enrolledCourses" JSON[],
-    progress JSON[],
-    "userId" BIGINT,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+"studentId" UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,
+"enrolledCourses" JSON[],
+progress JSON[],
+"userId" BIGINT,
+created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
 
 #### 3. **Instructors Table** - Instructor profiles
 sql
 CREATE TABLE public."Instructors" (
-    "instructorId" TEXT NOT NULL PRIMARY KEY,
-    "userId" TEXT,
-    bio TEXT,
-    qualifications TEXT,
-    rating DOUBLE PRECISION,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+"instructorId" TEXT NOT NULL PRIMARY KEY,
+"userId" TEXT,
+bio TEXT,
+qualifications TEXT,
+rating DOUBLE PRECISION,
+created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
 
@@ -354,54 +365,54 @@ CREATE TABLE public."Instructors" (
 #### 4. **Courses Table** - Course catalog
 sql
 CREATE TABLE public."Courses" (
-    "courseId" UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,
-    "instructorId" UUID DEFAULT gen_random_uuid(),
-    "categoryId" UUID DEFAULT gen_random_uuid(),
-    title TEXT DEFAULT ''::TEXT,
-    description TEXT DEFAULT ''::TEXT,
-    price DOUBLE PRECISION DEFAULT 0,
-    status JSONB,
-    url TEXT NOT NULL DEFAULT ''::TEXT,
-    thumbnail TEXT NOT NULL DEFAULT ''::TEXT,
-    "instructorName" TEXT,
-    enrolled BIGINT,
-    rating DOUBLE PRECISION,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+"courseId" UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,
+"instructorId" UUID DEFAULT gen_random_uuid(),
+"categoryId" UUID DEFAULT gen_random_uuid(),
+title TEXT DEFAULT ''::TEXT,
+description TEXT DEFAULT ''::TEXT,
+price DOUBLE PRECISION DEFAULT 0,
+status JSONB,
+url TEXT NOT NULL DEFAULT ''::TEXT,
+thumbnail TEXT NOT NULL DEFAULT ''::TEXT,
+"instructorName" TEXT,
+enrolled BIGINT,
+rating DOUBLE PRECISION,
+created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
 
 #### 5. **Category Table** - Course categorization
 sql
 CREATE TABLE public."Category" (
-    "categoryId" TEXT NOT NULL PRIMARY KEY,
-    name TEXT,
-    "parentCategoryId" TEXT,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+"categoryId" TEXT NOT NULL PRIMARY KEY,
+name TEXT,
+"parentCategoryId" TEXT,
+created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
 
 #### 6. **Sections Table** - Course sections/modules
 sql
 CREATE TABLE public."Sections" (
-    "sectionId" TEXT NOT NULL PRIMARY KEY,
-    "courseId" TEXT,
-    title TEXT,
-    "order" BIGINT,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+"sectionId" TEXT NOT NULL PRIMARY KEY,
+"courseId" TEXT,
+title TEXT,
+"order" BIGINT,
+created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
 
 #### 7. **Lesson Table** - Individual lessons
 sql
 CREATE TABLE public."Lesson" (
-    "lessonId" TEXT NOT NULL PRIMARY KEY,
-    "sectionId" TEXT,
-    title TEXT DEFAULT ''::TEXT,
-    content TEXT DEFAULT ''::TEXT,
-    "videoUrl" TEXT DEFAULT ''::TEXT,
-    duration BIGINT,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+"lessonId" TEXT NOT NULL PRIMARY KEY,
+"sectionId" TEXT,
+title TEXT DEFAULT ''::TEXT,
+content TEXT DEFAULT ''::TEXT,
+"videoUrl" TEXT DEFAULT ''::TEXT,
+duration BIGINT,
+created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
 
@@ -410,53 +421,53 @@ CREATE TABLE public."Lesson" (
 #### 8. **Enrollements Table** - Course enrollment tracking
 sql
 CREATE TABLE public."Enrollements" (
-    "enrollmentId" TEXT NOT NULL PRIMARY KEY,
-    "studentId" UUID,
-    "courseId" UUID NOT NULL DEFAULT gen_random_uuid(),
-    "enrollmentDate" TIMESTAMP WITH TIME ZONE,
-    progress DOUBLE PRECISION,
-    status TEXT,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-    FOREIGN KEY ("courseId") REFERENCES "Courses"("courseId") ON DELETE SET NULL,
-    FOREIGN KEY ("studentId") REFERENCES "Student"("studentId")
+"enrollmentId" TEXT NOT NULL PRIMARY KEY,
+"studentId" UUID,
+"courseId" UUID NOT NULL DEFAULT gen_random_uuid(),
+"enrollmentDate" TIMESTAMP WITH TIME ZONE,
+progress DOUBLE PRECISION,
+status TEXT,
+created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+FOREIGN KEY ("courseId") REFERENCES "Courses"("courseId") ON DELETE SET NULL,
+FOREIGN KEY ("studentId") REFERENCES "Student"("studentId")
 );
 
 
 #### 9. **Quizzes Table** - Course assessments
 sql
 CREATE TABLE public."Quizzes" (
-    "quizId" TEXT NOT NULL PRIMARY KEY,
-    "courseId" UUID,
-    title TEXT,
-    "passingGrade" BIGINT,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-    FOREIGN KEY ("courseId") REFERENCES "Courses"("courseId")
+"quizId" TEXT NOT NULL PRIMARY KEY,
+"courseId" UUID,
+title TEXT,
+"passingGrade" BIGINT,
+created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+FOREIGN KEY ("courseId") REFERENCES "Courses"("courseId")
 );
 
 
 #### 10. **Questions Table** - Quiz questions
 sql
 CREATE TABLE public."Questions" (
-    "questionId" TEXT NOT NULL PRIMARY KEY,
-    "quizId" TEXT,
-    text TEXT,
-    options JSONB NOT NULL,
-    "correctAnswer" TEXT,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-    FOREIGN KEY ("quizId") REFERENCES "Quizzes"("quizId")
+"questionId" TEXT NOT NULL PRIMARY KEY,
+"quizId" TEXT,
+text TEXT,
+options JSONB NOT NULL,
+"correctAnswer" TEXT,
+created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+FOREIGN KEY ("quizId") REFERENCES "Quizzes"("quizId")
 );
 
 
 #### 11. **Certificates Table** - Achievement certificates
 sql
 CREATE TABLE public."Certificates" (
-    "certId" TEXT NOT NULL PRIMARY KEY,
-    "studentId" UUID,
-    "courseId" UUID,
-    "issueDate" TIMESTAMP WITH TIME ZONE,
-    criteria TEXT,
-    FOREIGN KEY ("courseId") REFERENCES "Courses"("courseId"),
-    FOREIGN KEY ("studentId") REFERENCES "Student"("studentId")
+"certId" TEXT NOT NULL PRIMARY KEY,
+"studentId" UUID,
+"courseId" UUID,
+"issueDate" TIMESTAMP WITH TIME ZONE,
+criteria TEXT,
+FOREIGN KEY ("courseId") REFERENCES "Courses"("courseId"),
+FOREIGN KEY ("studentId") REFERENCES "Student"("studentId")
 );
 
 
@@ -465,41 +476,41 @@ CREATE TABLE public."Certificates" (
 #### 12. **Review Table** - Course reviews and ratings
 sql
 CREATE TABLE public."Review" (
-    "reviewId" TEXT NOT NULL PRIMARY KEY,
-    "courseId" TEXT,
-    "studentId" UUID,
-    rating BIGINT,
-    comment TEXT,
-    date TIMESTAMP WITH TIME ZONE,
-    FOREIGN KEY ("studentId") REFERENCES "Student"("studentId")
+"reviewId" TEXT NOT NULL PRIMARY KEY,
+"courseId" TEXT,
+"studentId" UUID,
+rating BIGINT,
+comment TEXT,
+date TIMESTAMP WITH TIME ZONE,
+FOREIGN KEY ("studentId") REFERENCES "Student"("studentId")
 );
 
 
 #### 13. **Forum Table** - Discussion forums
 sql
 CREATE TABLE public."Forum" (
-    "forumId" TEXT NOT NULL PRIMARY KEY,
-    "courseId" UUID,
-    topic TEXT,
-    "moderatorId" TEXT,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-    FOREIGN KEY ("courseId") REFERENCES "Courses"("courseId"),
-    FOREIGN KEY ("moderatorId") REFERENCES "User"("userId")
+"forumId" TEXT NOT NULL PRIMARY KEY,
+"courseId" UUID,
+topic TEXT,
+"moderatorId" TEXT,
+created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+FOREIGN KEY ("courseId") REFERENCES "Courses"("courseId"),
+FOREIGN KEY ("moderatorId") REFERENCES "User"("userId")
 );
 
 
 #### 14. **Posts Table** - Forum posts
 sql
 CREATE TABLE public."Posts" (
-    "postId" TEXT NOT NULL PRIMARY KEY,
-    "forumId" TEXT,
-    "authorId" TEXT,
-    content TEXT,
-    date TIMESTAMP WITH TIME ZONE,
-    "courseId" UUID,
-    FOREIGN KEY ("authorId") REFERENCES "User"("userId"),
-    FOREIGN KEY ("courseId") REFERENCES "Courses"("courseId"),
-    FOREIGN KEY ("forumId") REFERENCES "Forum"("forumId")
+"postId" TEXT NOT NULL PRIMARY KEY,
+"forumId" TEXT,
+"authorId" TEXT,
+content TEXT,
+date TIMESTAMP WITH TIME ZONE,
+"courseId" UUID,
+FOREIGN KEY ("authorId") REFERENCES "User"("userId"),
+FOREIGN KEY ("courseId") REFERENCES "Courses"("courseId"),
+FOREIGN KEY ("forumId") REFERENCES "Forum"("forumId")
 );
 
 
@@ -508,25 +519,25 @@ CREATE TABLE public."Posts" (
 #### 15. **Payments Table** - Payment transactions
 sql
 CREATE TABLE public."Payments" (
-    "paymentId" UUID NOT NULL PRIMARY KEY,
-    "enrollmentId" TEXT,
-    amount DOUBLE PRECISION,
-    date TIMESTAMP WITH TIME ZONE,
-    status TEXT,
-    method TEXT,
-    FOREIGN KEY ("enrollmentId") REFERENCES "Enrollements"("enrollmentId")
+"paymentId" UUID NOT NULL PRIMARY KEY,
+"enrollmentId" TEXT,
+amount DOUBLE PRECISION,
+date TIMESTAMP WITH TIME ZONE,
+status TEXT,
+method TEXT,
+FOREIGN KEY ("enrollmentId") REFERENCES "Enrollements"("enrollmentId")
 );
 
 
 #### 16. **Notifications Table** - User notifications
 sql
 CREATE TABLE public."Notifications" (
-    "notifId" TEXT NOT NULL PRIMARY KEY,
-    "userId" TEXT,
-    message TEXT,
-    "isRead" BOOLEAN,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-    FOREIGN KEY ("userId") REFERENCES "User"("userId")
+"notifId" TEXT NOT NULL PRIMARY KEY,
+"userId" TEXT,
+message TEXT,
+"isRead" BOOLEAN,
+created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+FOREIGN KEY ("userId") REFERENCES "User"("userId")
 );
 
 
@@ -539,21 +550,21 @@ ALTER TABLE "Courses" ENABLE ROW LEVEL SECURITY;
 ALTER TABLE "Enrollements" ENABLE ROW LEVEL SECURITY;
 
 -- User can only see their own data
-CREATE POLICY "Users can view own profile" 
-ON "User" FOR SELECT 
+CREATE POLICY "Users can view own profile"
+ON "User" FOR SELECT
 USING (auth.uid()::text = "userId");
 
 -- Public can view published courses
-CREATE POLICY "Anyone can view published courses" 
-ON "Courses" FOR SELECT 
+CREATE POLICY "Anyone can view published courses"
+ON "Courses" FOR SELECT
 USING (status->>'published' = 'true');
 
 -- Students can only see their own enrollments
-CREATE POLICY "Students see own enrollments" 
-ON "Enrollements" FOR SELECT 
+CREATE POLICY "Students see own enrollments"
+ON "Enrollements" FOR SELECT
 USING ("studentId" IN (
-    SELECT "studentId" FROM "Student" 
-    WHERE "userId" = auth.uid()::text
+SELECT "studentId" FROM "Student"
+WHERE "userId" = auth.uid()::text
 ));
 
 
@@ -590,34 +601,34 @@ sql
 CREATE OR REPLACE FUNCTION update_updated_at_column()
 RETURNS TRIGGER AS $$
 BEGIN
-    NEW.updated_at = NOW();
-    RETURN NEW;
+NEW.updated_at = NOW();
+RETURN NEW;
 END;
 $$ language 'plpgsql';
 
 -- Apply to relevant tables
-CREATE TRIGGER update_user_updated_at 
-    BEFORE UPDATE ON "User"
-    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+CREATE TRIGGER update_user_updated_at
+BEFORE UPDATE ON "User"
+FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
-CREATE TRIGGER update_courses_updated_at 
-    BEFORE UPDATE ON "Courses"
-    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+CREATE TRIGGER update_courses_updated_at
+BEFORE UPDATE ON "Courses"
+FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
 
 ## 📈 **Sample Queries**
 
 ### 1. Get Course with Details
 sql
-SELECT 
-    c."courseId",
-    c.title,
-    c.description,
-    c.price,
-    c.rating,
-    i.name as instructor_name,
-    cat.name as category_name,
-    COUNT(e."enrollmentId") as total_enrollments
+SELECT
+c."courseId",
+c.title,
+c.description,
+c.price,
+c.rating,
+i.name as instructor_name,
+cat.name as category_name,
+COUNT(e."enrollmentId") as total_enrollments
 FROM "Courses" c
 LEFT JOIN "Instructors" i ON c."instructorId" = i."instructorId"
 LEFT JOIN "Category" cat ON c."categoryId" = cat."categoryId"
@@ -627,12 +638,12 @@ GROUP BY c."courseId", i.name, cat.name;
 
 ### 2. Student Progress Report
 sql
-SELECT 
-    s."studentId",
-    u.name as student_name,
-    COUNT(DISTINCT e."courseId") as courses_enrolled,
-    AVG(e.progress) as avg_progress,
-    COUNT(DISTINCT cert."certId") as certificates_earned
+SELECT
+s."studentId",
+u.name as student_name,
+COUNT(DISTINCT e."courseId") as courses_enrolled,
+AVG(e.progress) as avg_progress,
+COUNT(DISTINCT cert."certId") as certificates_earned
 FROM "Student" s
 JOIN "User" u ON s."userId"::text = u."userId"
 LEFT JOIN "Enrollements" e ON s."studentId" = e."studentId"
@@ -642,13 +653,13 @@ GROUP BY s."studentId", u.name;
 
 ### 3. Instructor Performance
 sql
-SELECT 
-    i."instructorId",
-    u.name as instructor_name,
-    i.rating,
-    COUNT(DISTINCT c."courseId") as total_courses,
-    SUM(c.enrolled) as total_enrollments,
-    AVG(r.rating) as avg_course_rating
+SELECT
+i."instructorId",
+u.name as instructor_name,
+i.rating,
+COUNT(DISTINCT c."courseId") as total_courses,
+SUM(c.enrolled) as total_enrollments,
+AVG(r.rating) as avg_course_rating
 FROM "Instructors" i
 JOIN "User" u ON i."userId" = u."userId"
 LEFT JOIN "Courses" c ON i."instructorId"::text = c."instructorId"::text
@@ -676,31 +687,31 @@ supabase realtime start
 
 sql
 -- Check table sizes
-SELECT 
-    schemaname,
-    tablename,
-    pg_size_pretty(pg_total_relation_size(schemaname||'.'||tablename)) as total_size
-FROM pg_tables 
+SELECT
+schemaname,
+tablename,
+pg_size_pretty(pg_total_relation_size(schemaname||'.'||tablename)) as total_size
+FROM pg_tables
 WHERE schemaname = 'public'
 ORDER BY pg_total_relation_size(schemaname||'.'||tablename) DESC;
 
 -- Check foreign key constraints
 SELECT
-    tc.table_schema, 
-    tc.table_name, 
-    kcu.column_name, 
-    ccu.table_schema AS foreign_table_schema,
-    ccu.table_name AS foreign_table_name,
-    ccu.column_name AS foreign_column_name 
-FROM information_schema.table_constraints AS tc 
+tc.table_schema,
+tc.table_name,
+kcu.column_name,
+ccu.table_schema AS foreign_table_schema,
+ccu.table_name AS foreign_table_name,
+ccu.column_name AS foreign_column_name
+FROM information_schema.table_constraints AS tc
 JOIN information_schema.key_column_usage AS kcu
-    ON tc.constraint_name = kcu.constraint_name
-    AND tc.table_schema = kcu.table_schema
+ON tc.constraint_name = kcu.constraint_name
+AND tc.table_schema = kcu.table_schema
 JOIN information_schema.constraint_column_usage AS ccu
-    ON ccu.constraint_name = tc.constraint_name
-    AND ccu.table_schema = tc.table_schema
-WHERE tc.constraint_type = 'FOREIGN KEY' 
-    AND tc.table_schema = 'public';
+ON ccu.constraint_name = tc.constraint_name
+AND ccu.table_schema = tc.table_schema
+WHERE tc.constraint_type = 'FOREIGN KEY'
+AND tc.table_schema = 'public';
 
 
 ---
@@ -715,7 +726,7 @@ WHERE tc.constraint_type = 'FOREIGN KEY'
 ✅ **Audit Trails** - Created/Updated timestamps  
 ✅ **RLS Ready** - Row-level security compatible  
 ✅ **Real-time Capable** - Supabase subscriptions  
-✅ **Performance Optimized** - Index recommendations  
+✅ **Performance Optimized** - Index recommendations
 
 **"Designed for scalability, security, and real-time updates"**
 

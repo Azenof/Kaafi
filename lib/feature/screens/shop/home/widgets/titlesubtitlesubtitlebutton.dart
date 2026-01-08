@@ -1,5 +1,8 @@
+import '/exports/data_paths.dart';
+
 import 'package:flutter/material.dart';
-import 'roundedcolorbox.dart';
+import 'package:get/get.dart';
+
 
 class TitleSubtitleandButton extends StatelessWidget {
   const TitleSubtitleandButton({
