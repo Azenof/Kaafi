@@ -3,15 +3,26 @@
 
 <div align="center">
 
-*Empowering Practical Skills Through Affordable Micro-Learning*
+*Learnign platform for gaining life skills and enhanace your regular life*
 
 **Version:** 1.0 | **Date:** October 28, 2025 | **Status:** 📋 Active
+
 
 [![GitHub](https://img.shields.io/badge/Status-Under%20Development-yellow)](https://github.com/)
 [![License](https://img.shields.io/badge/License-MIT-blue)](https://github.com/)
 [![Platform](https://img.shields.io/badge/Platform-Web%20%26%20Mobile-success)](https://github.com/)
 
 </div>
+**📷ScreenShots**
+<img width="1630" height="917" alt="image" src="https://github.com/user-attachments/assets/01f76867-8296-4d24-a3fc-86ee73dc69d0" />
+<img width="1630" height="917" alt="image" src="https://github.com/user-attachments/assets/52be7250-925b-4e06-8f31-75c57e8a1431" />
+<img width="1630" height="917" alt="image" src="https://github.com/user-attachments/assets/df917b47-1f25-4644-876d-139da75ffa21" />
+<img width="1630" height="917" alt="image" src="https://github.com/user-attachments/assets/d06724cf-af90-4d05-98a8-512b70a17f98" />
+<img width="1630" height="917" alt="image" src="https://github.com/user-attachments/assets/2c3f30f0-ed24-435e-8422-fb36aea90a30" />
+<img width="1630" height="917" alt="image" src="https://github.com/user-attachments/assets/d2b6d4f5-9788-4ef3-aa26-3199644ef04a" />
+<img width="1630" height="917" alt="image" src="https://github.com/user-attachments/assets/246a47b2-a9e0-4ce4-b507-c50b5204b4cb" />
+<img width="1630" height="917" alt="image" src="https://github.com/user-attachments/assets/c7ad36c7-9a08-468e-92ac-be39915ccea2" />
+<img width="1630" height="917" alt="image" src="https://github.com/user-attachments/assets/b9e010f9-1c7d-442b-aa51-30b1c6ef963c" />
 
 ## 📖 Table of Contents
 - [Introduction](#introduction)
