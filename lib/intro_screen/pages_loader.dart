@@ -1,6 +1,10 @@
-import 'package:firstapp/constants/assetspaths.dart';
-import 'package:firstapp/intro_screen/IntorScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 class PagesLoader extends StatelessWidget {
   final List<String>dotlottieAssets;

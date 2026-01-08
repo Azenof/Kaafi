@@ -1,8 +1,12 @@
-import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../../../../../common/card/list/companycardlist.dart' show ShopCardList;
-import 'titlesubtitlesubtitlebutton.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 class ShopCardlistTitle extends StatelessWidget {
   const ShopCardlistTitle({

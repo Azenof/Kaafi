@@ -1,11 +1,15 @@
-import 'package:firstapp/feature/screens/shop/campaign/controller/campaigncontroller.dart' show CustomHeaderController, CampaignController;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../../../../../common/button/circulariconbutton.dart';
-import '../../../../../common/icon/customimgicon.dart' show Customimageicon;
-import '../controller/campaigncontroller.dart' show CustomHeaderController;
-import 'campaigntitlebox.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 class CustomHeader1 extends StatelessWidget {
   final VoidCallback sort;

@@ -1,9 +1,13 @@
-import 'package:firstapp/DataBase/EssentialData/EssentialData.dart';
-import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
-import 'package:firstapp/feature/screens/shop/shopdetatils/ShopdetailsController.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../../../../../Service/DataBaseService/CenterDataBase/Controller/center_data_base_controller.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
 
 class ShopBinding extends Bindings{
   @override

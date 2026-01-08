@@ -1,8 +1,12 @@
-import 'package:firstapp/feature/screens/shop/account/accountController.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../../../../../common/button/circulariconbutton.dart';
-import '../../../../../constant/imageconstant.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 class ProfileWithEditButton extends StatelessWidget {
   const ProfileWithEditButton({super.key, required this.onpressd});

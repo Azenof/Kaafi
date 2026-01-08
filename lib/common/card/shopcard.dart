@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../feature/screens/shop/shopdetatils/shopdetailsscreen.dart';
-import 'widget/productsubtitle.dart';
-import 'widget/ratingwithtotalrated.dart';
-import 'widget/shoptitlewithverification.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 class ShopCard extends StatelessWidget {
   const ShopCard({

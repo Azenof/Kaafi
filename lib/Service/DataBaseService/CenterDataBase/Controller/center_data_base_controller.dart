@@ -1,24 +1,11 @@
-import 'dart:isolate';
-import 'package:firstapp/Utils/AppString.dart';
 import 'package:get/get.dart';
-import '../../../../DataClass/Catagory_Data_Class.dart';
-import '../../../../DataClass/certificate_data_class.dart';
-import '../../../../DataClass/courses_data_class.dart';
-import '../../../../DataClass/enrollment_data_class.dart';
-import '../../../../DataClass/forum_data_class.dart';
-import '../../../../DataClass/insturctor_data_class.dart';
-import '../../../../DataClass/lesson_data_class.dart';
-import '../../../../DataClass/notification_data_class.dart';
-import '../../../../DataClass/payment_data_class.dart';
-import '../../../../DataClass/post_data_class.dart';
-import '../../../../DataClass/quiz_data_class.dart';
-import '../../../../DataClass/qustion_data_class.dart';
-import '../../../../DataClass/review_data_class.dart';
-import '../../../../DataClass/section_data_class.dart';
-import '../../../../DataClass/student_data_class.dart';
-import '../Database_service.dart';
-import '../../../../DataClass/MainDataClass/MainDataClass.dart';
-import 'controller_abstract.dart';
+import '/Utils/exports/data_paths.dart';
+
+import 'dart:isolate';
+
+import 'package:flutter/material.dart' hide Notification;
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
 
 Map<String, dynamic> _extractData(CompleteDatabase data) {

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../../constant/imageconstant.dart';
-import '../card/widget/producttag.dart';
-import 'roundedimg.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 class ProductimgWithTag extends StatelessWidget {
   const ProductimgWithTag({

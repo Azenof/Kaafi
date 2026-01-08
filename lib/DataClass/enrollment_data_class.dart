@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
+
 class Enrollment {
   final String enrollmentId;
   final String studentId;

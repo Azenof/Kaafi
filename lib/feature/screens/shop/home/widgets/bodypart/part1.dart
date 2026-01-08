@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../../../../../DataClass/courses_data_class.dart';
-import '../../../../../../common/card/banner/homebannercard.dart';
-import '../../../../../../common/card/homepagecard.dart' show HomePageCard;
-import '../../../../../../common/card/homepagecardlineargradiant.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 
 class Part1 extends StatelessWidget {

@@ -1,12 +1,16 @@
-import 'package:firstapp/feature/screens/shop/account/accountController.dart';
-import 'package:firstapp/feature/screens/shop/account/widget/FourTitleswithIcon.dart';
-import 'package:firstapp/feature/screens/shop/account/widget/FourbuttonRow.dart';
-import 'package:firstapp/feature/screens/shop/account/widget/Profilewitheditbutton.dart';
-import 'package:firstapp/feature/screens/shop/account/widget/Profilewitheditbutton.dart' as Profilewitheditbutton;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../common/text/titletext.dart';
-import '../../../../navigation.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 
 

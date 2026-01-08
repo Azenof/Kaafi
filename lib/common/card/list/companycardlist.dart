@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../DataClass/courses_data_class.dart';
-import '../shopcard.dart';
+import '/Utils/exports/data_paths.dart';
+
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
 class ShopCardList extends StatelessWidget {
   const ShopCardList({

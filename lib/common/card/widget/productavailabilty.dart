@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
 
 class ProductAbleabilty extends StatelessWidget {
   const ProductAbleabilty({super.key, required this.amount});

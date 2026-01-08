@@ -83,6 +83,12 @@ flutter:
     - assets/dotlotties/
     - assets/image/
     - assets/image/logo/
+    - lib/Utils/exports/data_paths.dart
+    - lib/Utils/exports/
+    - lib/Utils/
+    - lib/Utils/validator/
+    - lib/Utils/video_module/
+    - lib/Utils/video_module/video_widget.dart
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

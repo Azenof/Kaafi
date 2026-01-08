@@ -1,8 +1,12 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../../../../../DataBase/EssentialData/EssentialData.dart';
-import '../../../../../Service/DataBaseService/CenterDataBase/Controller/center_data_base_controller.dart';
-import '../cartController.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 class CartBinding extends Bindings{
   @override

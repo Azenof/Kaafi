@@ -1,4 +1,8 @@
-import 'package:firstapp/LocalStorage/smallStorage.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
 
 class UserSession{
   SmallStorage sm=SmallStorage();

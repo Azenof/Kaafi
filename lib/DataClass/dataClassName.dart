@@ -1,5 +1,6 @@
-import 'package:firstapp/Utils/AppString.dart';
-import 'dataClassImport.dart';
+
+
+import '/Utils/exports/data_paths.dart';
 
 class DataClassName {
   static Type getDataType(String type) {

@@ -1,19 +1,12 @@
-import 'package:firstapp/GlobalBinding/globalBinding.dart';
-import 'package:firstapp/LocalStorage/smallStorage.dart';
-import 'package:firstapp/constants/assetspaths.dart';
-import 'package:firstapp/constants/strings.dart';
-import 'package:firstapp/feature/screens/shop/home/homescreen.dart';
-import 'package:firstapp/intro_screen/pages_loader.dart';
-import 'package:firstapp/mistral_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import '/Utils/exports/data_paths.dart';
 
-import 'AppRoute/appRoute.dart';
-import 'Service/DataBaseService/CenterDataBase/Database_service.dart';
+
 
 
 

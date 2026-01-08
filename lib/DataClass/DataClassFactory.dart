@@ -1,5 +1,9 @@
+import 'package:flutter/material.dart'hide Notification;
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
-import 'dataClassImport.dart';
+
+import '/Utils/exports/data_paths.dart';
 
 class DataClassFactory {
   static dynamic create(String type, Map<String, dynamic> json) {

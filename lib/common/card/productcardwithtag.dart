@@ -1,13 +1,17 @@
-import 'package:firstapp/common/image/productimgwithtag.dart';
-import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../../DataClass/courses_data_class.dart';
-import '../../feature/screens/shop/productdetail/productdetailsscreen.dart';
-import 'cardlogobanner.dart';
-import 'widget/productprice.dart';
-import 'widget/ratingwithtotalrated.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 class ProductCardWithTag extends StatelessWidget {
   const ProductCardWithTag({super.key,

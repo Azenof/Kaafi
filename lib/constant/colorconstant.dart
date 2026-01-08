@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
 
 class ColorConstant {
   static const iconbg = Color.fromRGBO(156, 163, 175, 1);

@@ -1,12 +1,16 @@
-import 'package:firstapp/feature/screens/shop/account/accountController.dart';
-import 'package:firstapp/feature/screens/shop/account/widget/orderlist/orderlist.dart';
-import 'package:firstapp/feature/screens/shop/home/categories/categories.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../../account/accountscreen.dart' show ButtonwithTitle;
-import '../../account/widget/ButtonwithTitle.dart';
-import '../../account/widget/wishlist.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 class HomeFiveButton extends StatelessWidget {
   const HomeFiveButton({super.key, required this.controller});

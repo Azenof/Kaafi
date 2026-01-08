@@ -1,8 +1,12 @@
-import 'package:firstapp/Service/DataBaseService/CenterDataBase/Controller/center_data_base_controller.dart';
-import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../../../../../DataBase/EssentialData/EssentialData.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
 
 class HomeBinding extends Bindings{
   @override

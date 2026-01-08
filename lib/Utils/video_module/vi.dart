@@ -1,11 +1,17 @@
-import 'package:firstapp/Utils/video_module/video_module.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
+
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '/Utils/exports/data_paths.dart';
+
 
 class VideoControls extends StatelessWidget {
   final VideoController controller;
 
-  VideoControls({required this.controller});
+  const VideoControls({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {

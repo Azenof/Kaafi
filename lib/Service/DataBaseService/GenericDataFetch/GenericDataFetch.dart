@@ -1,10 +1,15 @@
-
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../DataBase/dataFetch_abstraction.dart';
-import '../CenterDataBase/Controller/center_data_base_controller.dart';
-import '../CenterDataBase/Database_service.dart';
-import 'TableNameRegistry.dart';
+import '/Utils/exports/data_paths.dart';
 
+
+import '/Utils/exports/data_paths.dart';
+import 'dart:isolate';
+
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart' hide Notification;
+import 'package:get/get.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 class GenericFetch<T> extends FetchData {
   final MainDatabase database;
   final String tableName;

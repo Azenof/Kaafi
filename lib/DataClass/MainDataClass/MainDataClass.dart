@@ -1,4 +1,6 @@
-import '/DataClass/barrel_data_class.dart';
+
+
+import '/Utils/exports/data_paths.dart';
 
 class CompleteDatabase {
   final List<User> users;
@@ -59,7 +61,7 @@ class CompleteDatabase {
   factory CompleteDatabase.fromJson(Map<String, dynamic> json) {
     // Helper function to safely parse lists
     List<T> parseList<T>(String key, T Function(Map<String, dynamic>) fromJson) {
-      if (json[key] == null || !(json[key] is List)) {
+      if (json[key] == null || json[key] is! List) {
         return [];
       }
       return List<T>.from(

@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
+
 export 'forum_data_class.dart';
 export 'enrollment_data_class.dart';
 export 'courses_data_class.dart';

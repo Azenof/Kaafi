@@ -1,12 +1,8 @@
-import '../feature/screens/shop/account/widget/orderlist/pages/allscreen.dart';
-import '../feature/screens/shop/account/widget/orderlist/pages/cancelledscreen.dart';
-import '../feature/screens/shop/account/widget/orderlist/pages/confirmscreen.dart';
-import '../feature/screens/shop/account/widget/orderlist/pages/delivered.dart';
-import '../feature/screens/shop/account/widget/orderlist/pages/dispatched.dart';
-import '../feature/screens/shop/account/widget/orderlist/pages/inspection.dart';
-import '../feature/screens/shop/account/widget/orderlist/pages/placescreen.dart';
-import '../feature/screens/shop/account/widget/orderlist/pages/readytodispatch.dart';
-import '../feature/screens/shop/account/widget/orderlist/pages/retrunscreen.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
 
 class TabScreens {
   static const tabScreen = [

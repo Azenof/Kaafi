@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../../../../../../common/button/circulariconbutton.dart';
-import '../../../../../../constant/stringconstant.dart';
-import '../../../../../../constant/tabscreen.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 class Orderlist extends StatelessWidget {
   const Orderlist({super.key});

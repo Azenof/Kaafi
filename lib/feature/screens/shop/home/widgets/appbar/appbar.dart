@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../../../../../../main.dart';
-import 'widget/searchbar.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 AppBar homeAppBar(GlobalKey<ScaffoldState> homeScaffoldKey) {
   // Pass the Scaffold key

@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
+
 export 'payment_data_class.dart';
 export'post_data_class.dart';
 export 'quiz_data_class.dart';

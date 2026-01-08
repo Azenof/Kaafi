@@ -1,6 +1,12 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
+
 // controllers/video_controller.dart
 import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
+
+import '/Utils/exports/data_paths.dart';
 
 class VideoController extends GetxController {
   late VideoPlayerController videoPlayerController;

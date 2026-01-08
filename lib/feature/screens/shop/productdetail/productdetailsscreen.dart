@@ -1,21 +1,11 @@
-import 'package:firstapp/Utils/video_module/video_module.dart';
-import 'package:firstapp/ai_integrate.dart';
-import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
-import 'package:firstapp/feature/screens/shop/productdetail/ProductController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:video_player/video_player.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../../../../DataClass/courses_data_class.dart';
-import '../../../../common/card/productcardwithtag.dart';
-import '../../../../common/card/shopinfoandbuttoncard.dart'
-    show ShopNameAddressPriceButtons;
-import '../../../../navigation.dart';
-import '../home/widgets/appbar/widget/searchbar.dart';
-import 'widgets/titleandcollection.dart';
-import 'widgets/variants.dart';
+
+
 
 class ProductDetails extends StatelessWidget {
   final String id;

@@ -1,11 +1,18 @@
 import 'package:dotlottie_loader/dotlottie_loader.dart';
-import 'package:firstapp/constants/assetspaths.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../feature/screens/auth/login/view/login_view.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
 
 class IntoScreen extends StatelessWidget {
   final String imagepath;

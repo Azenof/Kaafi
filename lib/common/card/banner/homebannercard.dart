@@ -1,9 +1,13 @@
-import 'package:firstapp/common/image/bannerimg.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../../../DataClass/courses_data_class.dart';
-import '../../../constant/imageconstant.dart';
-import '../homepagecard.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 class HomeBannerCard extends StatelessWidget {
   const HomeBannerCard({super.key, required this.list});

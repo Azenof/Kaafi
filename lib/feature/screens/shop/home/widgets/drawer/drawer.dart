@@ -1,16 +1,20 @@
-import 'package:firstapp/ai_integrate.dart';
-import 'package:firstapp/feature/screens/shop/account/accountController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../../../../../../constant/imageconstant.dart';
-import '../../../../../../navigation.dart';
-import '../../../account/accountscreen.dart';
-import '../../../account/widget/orderlist/orderlist.dart';
-import '../../../account/widget/wishlist.dart';
-import '../../../cart/cartscreen.dart';
-import '../../homescreen.dart';
-import 'widget/customlisttitle.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 class MyDrawer extends StatelessWidget {
   final String userName;

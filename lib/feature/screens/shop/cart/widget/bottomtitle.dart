@@ -1,8 +1,12 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../../../../../common/button/customelevatedbutton.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
 
 class BottomTitle extends StatelessWidget {
   const BottomTitle({super.key, required this.value});

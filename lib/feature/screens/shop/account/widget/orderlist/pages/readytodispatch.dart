@@ -1,7 +1,11 @@
-import 'package:firstapp/feature/screens/shop/account/widget/orderlist/widgets/ordercard.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../widgets/noroder.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
 
 class Readytodispatch extends StatelessWidget {
   const Readytodispatch({super.key, this.noitem = true});

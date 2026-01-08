@@ -1,9 +1,13 @@
-import 'package:firstapp/feature/screens/shop/campaign/controller/campaigncontroller.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../../../../../DataBase/EssentialData/EssentialData.dart';
-import '../../../../../Service/DataBaseService/CenterDataBase/Controller/center_data_base_controller.dart';
-import '../../home/Controller/homeController.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 class CampaginBinding extends Bindings {
   @override

@@ -1,9 +1,15 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_rx/src/rx_types/rx_types.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
+
+import 'dart:isolate';
+
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart' hide Notification;
+import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-import '../../../DataClass/MainDataClass/MainDataClass.dart';
+import '/Utils/exports/data_paths.dart';
 
 abstract class MainDatabase{
   Future<CompleteDatabase> fetchData();
@@ -16,7 +22,7 @@ abstract class MainDatabase{
 class DatabaseService implements MainDatabase{
   static final DatabaseService instance = DatabaseService._internal();
   final Rx<CompleteDatabase> _database=CompleteDatabase.emptydata.obs;
-  bool _isinit=false;
+  final bool _isinit=false;
   DatabaseService._internal();
 
   CompleteDatabase parseCompleteDatabase(dynamic json) {

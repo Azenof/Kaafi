@@ -1,12 +1,16 @@
-import 'package:firstapp/feature/screens/shop/account/widget/wishlist.dart';
-import 'package:firstapp/feature/screens/shop/cart/cartController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../DataClass/courses_data_class.dart';
-import '../../../../common/text/titletext.dart';
-import '../../../../constant/imageconstant.dart';
-import '../../../../navigation.dart';
-import 'widget/bottomtitle.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 class CartSrceen extends StatelessWidget {
   const CartSrceen({super.key});

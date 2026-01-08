@@ -1,11 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import '../../../../../DataBase/EssentialData/EssentialData.dart';
-import '../../../../../DataClass/courses_data_class.dart';
-import '../../../../../Service/DataBaseService/CenterDataBase/Controller/center_data_base_controller.dart';
-import '../../../../../Service/SupaBaseService/UserDataService/userDataService.dart';
-import '../../home/Controller/homeController.dart';
-import '../ProductController.dart';
+import '/Utils/exports/data_paths.dart';
+
 
 class ProductBinding extends Bindings {
   @override

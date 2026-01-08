@@ -1,12 +1,9 @@
 
 import 'package:flutter/foundation.dart';
-import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../DataClass/MainDataClass/MainDataClass.dart';
-import '../Service/DataBaseService/CenterDataBase/Controller/center_data_base_controller.dart';
-import '../Service/DataBaseService/CenterDataBase/Database_service.dart';
-import '../Service/DataBaseService/computer_adapter.dart';
+
 
 abstract class FetchData{
   final SupabaseClient client;

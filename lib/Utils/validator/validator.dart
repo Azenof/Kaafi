@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
+
 class Validator {
   static String? validateEmptyText(String? fieldName, String? value) {
     if (value == null || value.isEmpty) {

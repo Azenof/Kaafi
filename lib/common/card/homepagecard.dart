@@ -1,10 +1,14 @@
-import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../DataClass/courses_data_class.dart';
-import '../../constant/imageconstant.dart';
-import '../button/showbutton.dart';
-import 'productcard.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 class HomePageCard extends StatelessWidget {
   const HomePageCard({

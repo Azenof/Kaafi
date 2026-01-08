@@ -1,9 +1,13 @@
-import 'package:firstapp/DataBase/EssentialData/EssentialData.dart';
-import 'package:firstapp/Service/DataBaseService/CenterDataBase/Controller/center_data_base_controller.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../../../../DataClass/courses_data_class.dart';
-import '../../../../LocalStorage/smallStorage.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 class CartController extends GetxController{
   static CartController get instance=>Get.find<CartController>();

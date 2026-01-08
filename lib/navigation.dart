@@ -1,13 +1,18 @@
-import 'package:firstapp/Utils/AppString.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import '/Utils/exports/data_paths.dart';
 
-import 'Service/DataBaseService/CenterDataBase/Database_service.dart';
-import 'feature/screens/shop/account/accountscreen.dart';
-import 'feature/screens/shop/campaign/campaign.dart';
-import 'feature/screens/shop/cart/cartscreen.dart';
-import 'feature/screens/shop/home/homescreen.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 class NavigationController extends GetxController {
   static NavigationController get instance => Get.find();

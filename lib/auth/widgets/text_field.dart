@@ -1,6 +1,10 @@
-import 'package:firstapp/Utils/validator/validator.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 class Auth_text_field extends StatelessWidget {
   final String labeltext;
   final String hinttext;

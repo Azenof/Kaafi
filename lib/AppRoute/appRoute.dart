@@ -1,13 +1,11 @@
-import 'package:firstapp/feature/screens/shop/account/accountscreen.dart';
-import 'package:firstapp/feature/screens/shop/cart/cartscreen.dart';
-import 'package:firstapp/feature/screens/shop/home/homescreen.dart';
-import 'package:firstapp/feature/screens/shop/productdetail/productdetailsscreen.dart';
-import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../feature/screens/shop/account/accountBinding/accountBinding.dart';
-import '../feature/screens/shop/cart/CartBinding/cartBinding.dart';
-import '../feature/screens/shop/home/Binding/HomeBinding.dart';
-import '../feature/screens/shop/productdetail/Binding/productDeatailBinding.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
+
 
 class AppRoutes {
   static const home = '/home';

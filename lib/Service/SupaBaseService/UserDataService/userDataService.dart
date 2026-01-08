@@ -1,12 +1,16 @@
-
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../../../Utils/AppString.dart';
+import 'package:image_picker/image_picker.dart';
+
+import '/Utils/exports/data_paths.dart';
+import 'dart:isolate';
+
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart' hide Notification;
+import 'package:get/get.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class UserDataService {
   static UserDataService get instance=>Get.find<UserDataService>();

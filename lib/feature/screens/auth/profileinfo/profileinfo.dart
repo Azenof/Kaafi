@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../common/button/customelevatedbutton.dart'
-    show CustomElevatedButton;
-import '../../../../common/text/titletext.dart' show TitleText;
-import '../../../../common/textfield.dart/customtextfield.dart'
-    show CustomTextField;
-import '../../../../constant/stringconstant.dart';
-import 'infoprovide/infoprovider.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+
+
 
 class CompleteProfileScreen extends StatelessWidget {
   const CompleteProfileScreen({super.key, this.isUpdate = false});

@@ -1,14 +1,8 @@
-import 'package:firstapp/feature/screens/shop/campaign/controller/campaigncontroller.dart';
-import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sticky_headers/sticky_headers/widget.dart';
-import '../../../../common/card/banner/bannercarousel.dart' show BannerCarousel;
-import '../../../../common/card/productcardwithtag.dart';
-import '../../../../constant/imageconstant.dart';
-import '../../../../navigation.dart';
-import '../home/widgets/appbar/widget/searchbar.dart';
-import 'widget/customheader1.dart';
+import '/Utils/exports/data_paths.dart';
+
 
 class CampaignScreen extends StatelessWidget {
   const CampaignScreen({super.key});

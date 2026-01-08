@@ -1,6 +1,11 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'package:get_storage/get_storage.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
 
 class SmallStorage extends GetxController {
   static SmallStorage get instance => Get.find<SmallStorage>();

@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
+
 class ImageCons {
   static const logo = "assets/image/logo/logo_black.png";
   static const googlelogo = "assets/image/logo/google.png";

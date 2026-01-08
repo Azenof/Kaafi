@@ -1,9 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../../LocalStorage/smallStorage.dart';
-import '../../Service/DataBaseService/CenterDataBase/Controller/center_data_base_controller.dart';
-import '../User_Session/User_Session.dart';
-import '/DataClass/barrel_data_class.dart';
+import '/Utils/exports/data_paths.dart';
+
 
 class EssentialData {
   EssentialData(

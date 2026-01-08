@@ -1,7 +1,9 @@
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
 
-import '../../../Utils/AppString.dart';
-import '/DataClass/barrel_data_class.dart';
+
+import '/Utils/exports/data_paths.dart';
 
 class TableNameRegistry {
   final Map<Type, String> _names = {

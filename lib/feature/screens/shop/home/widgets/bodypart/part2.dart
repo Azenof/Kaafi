@@ -1,8 +1,12 @@
-import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../../../common/card/productcardwithtag.dart';
-import '../shopcardlisttitle.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 class Part2 extends StatelessWidget {
   const Part2({super.key});

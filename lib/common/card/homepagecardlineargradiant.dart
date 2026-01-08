@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../../DataClass/courses_data_class.dart';
-import '../button/showbutton.dart';
-import 'homepagecard.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 class HomePageCardLinearGradiant extends StatelessWidget {
   const HomePageCardLinearGradiant({

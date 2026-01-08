@@ -1,15 +1,7 @@
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import '/Utils/exports/data_paths.dart';
 
-import '../DataBase/EssentialData/EssentialData.dart';
-import '../LocalStorage/smallStorage.dart';
-import '../Service/DataBaseService/CenterDataBase/Controller/center_data_base_controller.dart';
-import '../Service/DataBaseService/CenterDataBase/Database_service.dart';
-import '../Service/SupaBaseService/UserDataService/userDataService.dart';
-import '../feature/screens/shop/account/accountController.dart';
-import '../feature/screens/shop/campaign/controller/campaigncontroller.dart';
-import '../feature/screens/shop/cart/cartController.dart';
 
 class GlobalBinding extends Bindings {
   @override

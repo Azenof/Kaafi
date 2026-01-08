@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import '../../../../common/button/customelevatedbutton.dart';
-import '../../../../common/text/titletext.dart';
-import '../../../../common/textfield.dart/customtextfield.dart';
-import '../../../../constant/stringconstant.dart';
+import 'package:get/get.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
 
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({super.key});

@@ -1,14 +1,12 @@
-import 'package:firstapp/feature/screens/shop/home/Controller/homeController.dart';
-import 'package:firstapp/feature/screens/shop/home/widgets/appbar/widget/searchbar.dart'
-    show RoundedSearchBar;
-import 'package:firstapp/feature/screens/shop/shopdetatils/ShopdetailsController.dart';
 import 'package:flutter/material.dart';
-import 'package:sticky_headers/sticky_headers/widget.dart';
-import '../../../../common/card/cardlogobanner.dart';
-import '../../../../common/card/productcardwithtag.dart';
-import '../../../../navigation.dart';
-import 'widget/header.dart';
 import 'package:get/get.dart';
+import 'package:sticky_headers/sticky_headers/widget.dart';
+import '/Utils/exports/data_paths.dart';
+
+import '/Utils/exports/data_paths.dart';
+import '/Utils/exports/data_paths.dart';
+
+
 
 class ShopDetails extends StatelessWidget {
   const ShopDetails({super.key});
